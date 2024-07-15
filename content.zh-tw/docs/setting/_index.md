@@ -1,4 +1,4 @@
 ---
 bookFlatSection: true
-title: "初始化設定"
+title: "設置與操作"
 ---
