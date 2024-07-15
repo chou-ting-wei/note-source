@@ -1,8 +1,12 @@
 # hugo server --minify --themesDir ../.. --baseURL=http://0.0.0.0:1313/theme/hugo-book/
 
-baseURL: https://example.com/
-title: Hugo Book
+baseURL: https://note.userwei.com/
+title: userwei's 的筆記
 theme: hugo-book
+
+defaultContentLanguage: zh-tw
+# googleAnalytics = "UA-XXXXXXXXX-X"
+# disqusShortname = "my-site"
 
 # Book configuration
 disablePathToLower: true
@@ -21,23 +25,15 @@ markup:
 # See https://gohugo.io/content-management/multilingual/#translation-by-filename
 # And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
 languages:
-  en:
-    languageName: English
-    contentDir: content.en
+  zh-tw:
+    languageName: 繁體中文
+    contentDir: content.zh-tw
     weight: 1
-  ru:
-    languageName: Russian
-    contentDir: content.ru
-    weight: 2
-  zh:
-    languageName: Chinese
-    contentDir: content.zh
-    weight: 3
 
 menu:
   # before: []
   after:
-    - name: "Github"
+    - name: "GitHub"
       url: "https://github.com/alex-shpak/hugo-book"
       weight: 10
     - name: "Hugo Themes"
@@ -85,7 +81,7 @@ params:
   # Enable "Edit this page" links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
   # Edit path must point to root directory of repo.
-  BookEditPath: edit/main/exampleSite
+  # BookEditPath: edit/main/exampleSite
 
   # Configure the date format used on the pages
   # - In git information
