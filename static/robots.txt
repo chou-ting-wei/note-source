@@ -1,0 +1,14 @@
+#    _____
+#   | o o |
+#  (|  ^  |)
+#   |  -  |
+#   | [_] |
+#   |     |
+#   |_____|
+#    |   | 
+
+User-agent: *
+Disallow: /categories/
+Disallow: /tags/
+
+Sitemap: https://note.userwei.com/sitemap.xml
