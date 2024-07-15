@@ -7,7 +7,7 @@ theme: hugo-book
 DefaultContentLanguage: zh-tw
 hasCJKLanguage: true
 timezone: "Asia/Taipei"
-disqusShortname: "note-13"
+# disqusShortname: "note-13"
 
 # Book configuration
 disablePathToLower: true
