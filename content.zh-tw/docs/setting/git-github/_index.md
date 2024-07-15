@@ -14,6 +14,20 @@ type: docs
     ```sh
     git config --list
     ```
+3. Branch
+    ```sh
+    # Switch to an existing branch
+    git checkout <branch-name>
+    # Create a new branch and switch to it
+    git checkout -b <new-branch-name>
+    ```
+4. Submodule
+    ```sh
+    # Add a new submodule to the repository
+    git submodule add <repository-url> <path>
+    # Initialize, fetch and checkout the submodule
+    git submodule update --init --recursive
+    ```
 
 ## GitHub
 ### SSH key
