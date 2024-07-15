@@ -4,7 +4,9 @@ baseURL: https://note.userwei.com/
 title: userwei 的筆記
 theme: hugo-book
 
-defaultContentLanguage: zh-tw
+DefaultContentLanguage: zh-tw
+hasCJKLanguage: true
+timezone: "Asia/Taipei"
 # disqusShortname = "my-site"
 
 # Book configuration
