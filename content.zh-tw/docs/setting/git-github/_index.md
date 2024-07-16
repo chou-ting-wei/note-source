@@ -6,28 +6,30 @@ type: docs
 
 ## Git
 ### Config
-1. 設定識別資料
+1. Set your identity
     ```sh
     git config --global user.name "your_name"
     git config --global user.email your_email@users.noreply.github.com
     ```
-2. 檢查設定
-    ```sh
-    git config --list
-    ```
-### Branch
-1. Config
+2. Set default commit branch
     ```sh
     git config --global init.defaultBranch main
     ```
-2. Switch to an existing branch
+3. Check your settings
+    ```sh
+    git config --list
+    ```
+
+### Branch
+1. Switch to an existing branch
     ```sh
     git checkout <branch-name>
     ```
-3. Create a new branch and switch to it
+2. Create a new branch and switch to it
     ```sh
     git checkout -b <new-branch-name>
     ```
+
 ### Submodule
 1. Add a new submodule to the repository
     ```sh
@@ -40,32 +42,32 @@ type: docs
 
 ## GitHub
 ### SSH key
-1. 生成 SSH key
+1. Generate a new SSH key
     ```sh
     ssh-keygen -t ed25519 -C "your_email@example.com"
     ```
-2. 複製 SSH public key
+2. Copy the SSH public key to your clipboard
     ```sh
     cat ~/.ssh/id_ed25519.pub
     # Then select and copy the contents of the id_ed25519.pub file
     # displayed in the terminal to your clipboard
     ```
-3. 在 GitHub 設定中加入 SSH public key
+3. Add a new SSH authentication key to your account
 
 ### GPG key
-1. 下載 [GnuPG](https://www.gnupg.org/download/) 並安裝
-2. 生成 GPG key
+1. Download and install [the GPG command line tools](https://www.gnupg.org/download/)
+2. Generate a GPG key pair
     ```sh
     gpg --full-generate-key
     ```
-3. 皆使用默認選擇，並設定識別資料
+3. Enter your user ID information
     > When asked to enter your email address, ensure that you enter the verified email address for your GitHub account. To keep your email address private, use your GitHub-provided `no-reply` email address.
-4. 列出所有 GPG key
+4. List the long form of the GPG keys
     ```sh
     gpg --list-secret-keys --keyid-format=long
     ```
     > Some GPG installations on Linux may require you to use `gpg2 --list-keys --keyid-format LONG` to view a list of your existing keys instead. In this case you will also need to configure Git to use `gpg2` by running `git config --global gpg.program gpg2`.
-5. 選擇要使用的 GPG key
+5. Copy the long form of the GPG key ID you'd like to use
     ```sh
     $ gpg --list-secret-keys --keyid-format=long
     /Users/hubot/.gnupg/secring.gpg
@@ -75,15 +77,18 @@ type: docs
     ssb   4096R/4BB6D45482678BE3 2016-03-10
     ```
     > In this example, the GPG key ID is `3AA5C34371567BD2`.
-6. 複製 GPG key
+6. Paste the text below, substituting in the GPG key ID you'd like to use
     ```sh
     gpg --armor --export 3AA5C34371567BD2
     # Prints the GPG key ID, in ASCII armor format
     ```
     > Copy your GPG key, beginning with `-----BEGIN PGP PUBLIC KEY BLOCK-----` and ending with `-----END PGP PUBLIC KEY BLOCK-----`.
-7. 在 GitHub 設定中加入 GPG key
-8. 將 GPG key 配置到 git config 中
+7. Add a new GPG key to your account
+8. Set your primary GPG signing key in Git
     ```sh
     git config --global user.signingkey 3AA5C34371567BD2
+    ```
+9. Configure Git to sign all commits by default
+    ```sh
     git config --global commit.gpgsign true
     ```

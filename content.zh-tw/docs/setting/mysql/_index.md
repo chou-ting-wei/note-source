@@ -3,41 +3,51 @@ title: MySQL
 type: docs
 ---
 # MySQL
+## Basic Operations
+### Login
+```sh
+sudo mysql -u root -p
+```
+### Database
+```sql
+mysql> CREATE DATABASE database_name;
+mysql> USE database_name;
+mysql> SHOW databases;
+```
 
-## 基本操作
-1. Login
-    ```sh
-    sudo mysql -u root -p
-    ```
-2. Database
-    ```SQL
-    mysql> CREATE DATABASE database_name;
-    mysql> USE database_name;
-    mysql> SHOW databases;
-    ```
+### Schema
+```sql
+mysql> DESC table_name;
+```
 
-3. Table
-    ```SQL
-    -- CREATE TABLE
+### Table
+1. Create table
+    ```sql
     mysql> CREATE TABLE table_name (
         -> column_name1 data_type,
         -> column_name2 data_type,
         -> column_name3 data_type,
         -> ...
         -> );
-
-    -- ADD COLUMN
+    ```
+2. Add column
+    ```sql
     mysql> ALTER TABLE table_name ADD column_name datatype;
-
-    -- ALTER COLUMN TYPE
+    ```
+3. Alter column type
+    ```sql
     mysql> ALTER TABLE table_name ALTER COLUMN column_name datatype;
-
-    -- DROP COLUMN
+    ```
+4. Drop column
+    ```sql
     mysql> ALTER TABLE table_name DROP COLUMN column_name;
-
-    -- DROP TABLE
+    ```
+5. Drop table
+    ```sql
     mysql> DROP TABLE table_name;
-
+    ```
+6. Others
+    ```sql
     mysql> SHOW tables;
     mysql> LOAD DATA LOCAL INFILE 'file_path'
         -> INTO TABLE table_name
@@ -46,27 +56,26 @@ type: docs
     mysql> SELECT * FROM table_name LIMIT 10;
     ```
 
-4. 資料查詢
-    ```SQL
-    mysql> SELECT (DISTINCT) table_column1, table_column2, table_column3...
-        -> FROM table_name
-        -> WHERE column_name operator value
-        
-        -> AND column_name2 operator value2
-        -> [AND|OR] ...;
-        
-        -> ORDER BY column_name1 ASC|DESC, column_name2 ASC|DESC...;
-    ```
+### Data Query
+```sql
+mysql> SELECT (DISTINCT) table_column1, table_column2, table_column3...
+    -> FROM table_name
+    -> WHERE column_name operator value
+    
+    -> AND column_name2 operator value2
+    -> [AND|OR] ...;
+    
+    -> ORDER BY column_name1 ASC|DESC, column_name2 ASC|DESC...;
+```
 
-5. SQL 函數
-    ```SQL
-    mysql> SELECT COUNT((DISTINCT) column_name) FROM table_name;
-    ```
+### SQL Functions
+```SQL
+mysql> SELECT COUNT((DISTINCT) column_name) FROM table_name;
+```
 
-
-## 錯誤解決
+## Error Solutions
 1. ERROR 3950 (42000): Loading local data is disabled; this must be enabled on both the client and server side
-    ```SQL
+    ```sql
     mysql> SHOW global variables LIKE 'local_infile';
     +---------------+-------+
     | Variable_name | Value |
