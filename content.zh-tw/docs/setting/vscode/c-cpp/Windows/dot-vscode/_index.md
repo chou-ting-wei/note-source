@@ -1,13 +1,11 @@
 ---
-title: C++
+title: .vscode
 type: docs
 ---
 
-# C++
+# .vscode
 
-## Windows
-
-### c_cpp_properties.json
+## c_cpp_properties.json
 
 ```json
 // .vscode/c_cpp_properties.json
@@ -36,7 +34,7 @@ type: docs
 }
 ```
 
-### lanuch.json
+## lanuch.json
 
 ```json
 // .vscode/lanuch.json
@@ -73,7 +71,7 @@ type: docs
 }
 ```
 
-### settings.json
+## settings.json
 
 ```json
 // .vscode/settings.json
@@ -87,7 +85,7 @@ type: docs
 }
 ```
 
-### tasks.json
+## tasks.json
 
 ```json
 // .vscode/tasks.json
