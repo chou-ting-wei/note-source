@@ -5,6 +5,7 @@ type: docs
 # Git & GitHub
 
 ## Git
+### Config
 1. 設定識別資料
     ```sh
     git config --global user.name "your_name"
@@ -14,18 +15,26 @@ type: docs
     ```sh
     git config --list
     ```
-3. Branch
+### Branch
+1. Config
     ```sh
-    # Switch to an existing branch
+    git config --global init.defaultBranch main
+    ```
+2. Switch to an existing branch
+    ```sh
     git checkout <branch-name>
-    # Create a new branch and switch to it
+    ```
+3. Create a new branch and switch to it
+    ```sh
     git checkout -b <new-branch-name>
     ```
-4. Submodule
+### Submodule
+1. Add a new submodule to the repository
     ```sh
-    # Add a new submodule to the repository
     git submodule add <repository-url> <path>
-    # Initialize, fetch and checkout the submodule
+    ```
+2. Initialize, fetch and checkout the submodule
+    ```sh
     git submodule update --init --recursive
     ```
 
