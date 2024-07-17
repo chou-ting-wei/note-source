@@ -23,8 +23,7 @@ type: docs
    ```txt
    switch(config-line)# end
    switch#
-   ```
-   ```txt
+   % or
    switch(config-line)# Ctrl+Z
    switch#
    ```
@@ -59,9 +58,7 @@ To save the running configuration to the startup configuration, use one of the f
 
 ```txt
 switch# copy running-config startup-config
-```
-
-```txt
+% or
 switch# write memory
 ```
 
@@ -77,37 +74,37 @@ SW-EC1f(config)#
 
 1. Console Access password
 
-```txt
-SW-EC1f(config)# line console 0
-SW-EC1f(config-line)# password passwd1
-SW-EC1f(config-line)# login
-SW-EC1f(config-line)# exit
-SW-EC1f(config)#
-```
+   ```txt
+   SW-EC1f(config)# line console 0
+   SW-EC1f(config-line)# password passwd1
+   SW-EC1f(config-line)# login
+   SW-EC1f(config-line)# exit
+   SW-EC1f(config)#
+   ```
 
 2. Privileged EXEC Access password
 
-```txt
-SW-EC1f(config)# enable password passwd2
-```
+   ```txt
+   SW-EC1f(config)# enable password passwd2
+   ```
 
 ## Configure Users and their Secrets
 
 1. Console Access secret
 
-```txt
-SW-EC1f(config)# username user secret passwd3
-SW-EC1f(config)# line console 0
-SW-EC1f(config-line)# login local
-SW-EC1f(config-line)# exit
-SW-EC1f(config)#
-```
+   ```txt
+   SW-EC1f(config)# username user secret passwd3
+   SW-EC1f(config)# line console 0
+   SW-EC1f(config-line)# login local
+   SW-EC1f(config-line)# exit
+   SW-EC1f(config)#
+   ```
 
 2. Privileged EXEC Access secret
 
-```txt
-SW-EC1f(config)# enable secret passwd4
-```
+   ```txt
+   SW-EC1f(config)# enable secret passwd4
+   ```
 
 ## Banner Messages
 
@@ -133,28 +130,28 @@ SW-EC1f# show version
 
 1. Show all neighbors
 
-```txt
-Sw-Lab1# show cdp neighbors
-```
+   ```txt
+   Sw-Lab1# show cdp neighbors
+   ```
 
 2. Show details of one neighbor
 
-```txt
-Sw-Lab1# show cdp entry Device-ID
-```
+   ```txt
+   Sw-Lab1# show cdp entry Device-ID
+   ```
 
 3. Disable CDP globally
 
-```txt
-Sw-Lab1(config)# no cdp run
-```
+   ```txt
+   Sw-Lab1(config)# no cdp run
+   ```
 
 4. Disable CDP for an interface
 
-```txt
-Sw-Lab1(config)# interface fastEthernet 0/1
-Sw-Lab1(config-if)# no cdp enable
-```
+   ```txt
+   Sw-Lab1(config)# interface fastEthernet 0/1
+   Sw-Lab1(config-if)# no cdp enable
+   ```
 
 ## Link Layer Discovery Protocol
 

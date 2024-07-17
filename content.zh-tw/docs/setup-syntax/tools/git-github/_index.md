@@ -7,7 +7,7 @@ type: docs
 
 ## Git
 
-### Config
+### User Configuration
 
 1. Set your identity
    ```sh
@@ -23,7 +23,7 @@ type: docs
    git config --list
    ```
 
-### Branch
+### Branch Operations
 
 1. Switch to an existing branch
    ```sh
@@ -34,7 +34,7 @@ type: docs
    git checkout -b <new-branch-name>
    ```
 
-### Submodule
+### Submodule Management
 
 1. Add a new submodule to the repository
    ```sh
@@ -45,9 +45,63 @@ type: docs
    git submodule update --init --recursive
    ```
 
+### Conflict Resolution
+
+1. Identify the conflict
+   ```sh
+   git status
+   # or
+   git diff
+   ```
+2. Open the conflicting file
+   ```sh
+   <<<<<<< HEAD
+   Your changes
+   =======
+   Changes from the branch you are merging
+   >>>>>>> branch-name
+   ```
+   > Remove the conflict markers and decide what the final content should be.
+3. Add the resolved file to the staging area
+   ```sh
+   git add <file-name>
+   ```
+4. Commit the resolved changes
+
+   ```sh
+   git commit
+   ```
+
+5. Continue with your merge or rebase
+
+   ```sh
+   git merge --continue
+   # or
+   git rebase --continue
+   ```
+
+### Commit Reversion
+
+1. Identify the Commit
+   ```sh
+   git log
+   ```
+2. Reset to the Previous Commit
+   ```sh
+   git reset --hard HEAD~1
+   # or
+   git reset --hard <commit-hash>
+   ```
+   > WARNING: This will discard all changes after the specified commit.
+3. Force Push the Changes
+   ```sh
+   git push --force
+   ```
+   > WARNING: This can overwrite changes in the remote repository.
+
 ## GitHub
 
-### SSH Key
+### SSH Key Setup
 
 1. Generate a new SSH key
    ```sh
@@ -61,7 +115,7 @@ type: docs
    ```
 3. Add a new SSH authentication key to your account
 
-### GPG Key
+### GPG Key Setup
 
 1. Download and install [the GPG command line tools](https://www.gnupg.org/download/)
 2. Generate a GPG key pair

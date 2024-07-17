@@ -7,13 +7,13 @@ type: docs
 
 ## Basic Operations
 
-### Login
+### User Authentication
 
 ```sh
 sudo mysql -u root -p
 ```
 
-### Database
+### Database Setup
 
 ```sql
 mysql> CREATE DATABASE database_name;
@@ -21,13 +21,13 @@ mysql> USE database_name;
 mysql> SHOW databases;
 ```
 
-### Schema
+### Schema Description
 
 ```sql
 mysql> DESC table_name;
 ```
 
-### Table
+### Table Operations
 
 1. Create table
    ```sql
@@ -64,7 +64,7 @@ mysql> DESC table_name;
    mysql> SELECT * FROM table_name LIMIT 10;
    ```
 
-### Data Query
+### Data Querying
 
 ```sql
 mysql> SELECT (DISTINCT) table_column1, table_column2, table_column3...
