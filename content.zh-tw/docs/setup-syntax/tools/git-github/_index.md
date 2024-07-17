@@ -121,7 +121,7 @@ type: docs
 
 ### GPG Key Setup
 
-1. Download and install [the GPG command line tools](https://www.gnupg.org/download/)
+1. Download and install the [GPG command line tool](https://www.gnupg.org/download/)
 2. Generate a GPG key pair
    ```sh
    gpg --full-generate-key
