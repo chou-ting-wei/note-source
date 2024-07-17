@@ -93,6 +93,8 @@ SW-EC1f(config)# enable password passwd2
 
 ## Configure Users and their Secrets
 
+1. Console Access secret
+
 ```txt
 SW-EC1f(config)# username user secret passwd3
 SW-EC1f(config)# line console 0
@@ -100,6 +102,8 @@ SW-EC1f(config-line)# login local
 SW-EC1f(config-line)# exit
 SW-EC1f(config)#
 ```
+
+2. Privileged EXEC Access secret
 
 ```txt
 SW-EC1f(config)# enable secret passwd4
