@@ -1,4 +1,4 @@
 ---
 bookFlatSection: true
-title: "設置與操作"
+title: "設置與語法"
 ---
