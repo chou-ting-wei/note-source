@@ -5,6 +5,8 @@ type: docs
 
 # Favicon
 
+To set up a favicon for your website, follow these steps:
+
 1. Use the [Favicon Generator](https://favicon.io/favicon-converter/) to create your favicon files
 2. Paste the following link tags into the `<head>` section of your HTML file
 

@@ -67,12 +67,14 @@ void getAC(){
 void time(){
     #ifdef LOCAL
         cerr << "Execution Time : " << double(clock() - start) / CLOCKS_PER_SEC << " (s)" << endl;
-        fclose(stdin), fclose(stdout), fclose(stderr);
+        fclose(stdin);
+        fclose(stdout);
+        fclose(stderr);
     #endif
 }
 
 int max(int a, int b) { return a > b ? a : b; }
-int gcd(int a, int b) { if(a == 0) return b; return b == 0 ? a : gcd(b, a % b); }
+int gcd(int a, int b) { return b == 0 ? a : gcd(b, a % b); }
 
 const double PI = acos(-1);
 const int INF = 5000000000000000000;
@@ -95,12 +97,10 @@ struct custom_hash{
 
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-
-
 int32_t main(){
     getAC();
 
-
+    // Your code here
 
     time();
     return 0;

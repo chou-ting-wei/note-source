@@ -47,7 +47,7 @@ type: docs
 
 ## GitHub
 
-### SSH key
+### SSH Key
 
 1. Generate a new SSH key
    ```sh
@@ -61,7 +61,7 @@ type: docs
    ```
 3. Add a new SSH authentication key to your account
 
-### GPG key
+### GPG Key
 
 1. Download and install [the GPG command line tools](https://www.gnupg.org/download/)
 2. Generate a GPG key pair
