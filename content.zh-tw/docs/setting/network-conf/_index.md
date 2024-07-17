@@ -1,5 +1,5 @@
 ---
 bookCollapseSection: true
-title: Web Component
+title: Network Configuration
 type: docs
 ---

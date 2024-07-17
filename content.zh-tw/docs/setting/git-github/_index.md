@@ -1,9 +1,9 @@
 ---
-title: Git & GitHub
+title: Git/GitHub
 type: docs
 ---
 
-# Git & GitHub
+# Git/GitHub
 
 ## Git
 

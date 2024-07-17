@@ -1,5 +1,5 @@
 ---
 bookCollapseSection: true
-title: Web Component
+title: Programming Language
 type: docs
 ---
