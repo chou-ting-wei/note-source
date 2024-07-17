@@ -1,5 +1,5 @@
 ---
 bookCollapseSection: true
-title: Network Configuration
+title: Network
 type: docs
 ---
