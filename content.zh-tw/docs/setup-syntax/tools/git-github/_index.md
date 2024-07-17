@@ -45,6 +45,27 @@ type: docs
    git submodule update --init --recursive
    ```
 
+### Commit Reversion
+
+> &#x26a0;&#xfe0f;WARNING: Reverting commits can potentially lead to loss of work. Ensure you have backups or have communicated with your team before performing these actions.
+
+1. Identify the Commit
+   ```sh
+   git log
+   ```
+2. Reset to the Previous Commit
+   ```sh
+   git reset --hard HEAD~1
+   # or
+   git reset --hard <commit-hash>
+   ```
+   > This will discard all changes after the specified commit.
+3. Force Push the Changes
+   ```sh
+   git push --force
+   ```
+   > This can overwrite changes in the remote repository.
+
 ### Conflict Resolution
 
 1. Identify the conflict
@@ -54,7 +75,7 @@ type: docs
    git diff
    ```
 2. Open the conflicting file
-   ```sh
+   ```txt
    <<<<<<< HEAD
    Your changes
    =======
@@ -79,25 +100,6 @@ type: docs
    # or
    git rebase --continue
    ```
-
-### Commit Reversion
-
-1. Identify the Commit
-   ```sh
-   git log
-   ```
-2. Reset to the Previous Commit
-   ```sh
-   git reset --hard HEAD~1
-   # or
-   git reset --hard <commit-hash>
-   ```
-   > &#x26a0;&#xfe0f;WARNING: This will discard all changes after the specified commit.
-3. Force Push the Changes
-   ```sh
-   git push --force
-   ```
-   > &#x26a0;&#xfe0f;WARNING: This can overwrite changes in the remote repository.
 
 ## GitHub
 
