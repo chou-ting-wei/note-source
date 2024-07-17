@@ -1,5 +1,5 @@
 ---
 bookCollapseSection: true
-title: Cisco CLI
+title: Cisco IOS CLI
 type: docs
 ---

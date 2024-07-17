@@ -75,7 +75,7 @@ SW-EC1f(config)#
 
 ## Configure Passwords
 
-### Console Access password
+1. Console Access password
 
 ```txt
 SW-EC1f(config)# line console 0
@@ -85,8 +85,91 @@ SW-EC1f(config-line)# exit
 SW-EC1f(config)#
 ```
 
-### Privileged EXEC Access password
+2. Privileged EXEC Access password
 
 ```txt
 SW-EC1f(config)# enable password passwd2
+```
+
+## Configure Users and their Secrets
+
+```txt
+SW-EC1f(config)# username user secret passwd3
+SW-EC1f(config)# line console 0
+SW-EC1f(config-line)# login local
+SW-EC1f(config-line)# exit
+SW-EC1f(config)#
+```
+
+```txt
+SW-EC1f(config)# enable secret passwd4
+```
+
+## Banner Messages
+
+The delimiter can be any character, being used to mark the start and end of message.
+
+```txt
+SW-EC1f(config)# banner motd !
+helloworld hellloflvksdflsdk!
+SW-EC1f(config)#
+```
+
+## Verify and Monitor Cisco Device
+
+```txt
+SW-EC1f# show running-config
+SW-EC1f# show startup-config
+SW-EC1f# show interfaces
+SW-EC1f# show arp
+SW-EC1f# show version
+```
+
+## Cisco Discovery Protocol
+
+1. Show all neighbors
+
+```txt
+Sw-Lab1# show cdp neighbors
+```
+
+2. Show details of one neighbor
+
+```txt
+Sw-Lab1# show cdp entry Device-ID
+```
+
+3. Disable CDP globally
+
+```txt
+Sw-Lab1(config)# no cdp run
+```
+
+4. Disable CDP for an interface
+
+```txt
+Sw-Lab1(config)# interface fastEthernet 0/1
+Sw-Lab1(config-if)# no cdp enable
+```
+
+## Link Layer Discovery Protocol
+
+1. Enable LLDP globally
+
+```txt
+Sw-Lab1(config)# lldp run
+```
+
+2. Enable LLDP for an interface
+
+```txt
+Sw-Lab1(config)# interface fastEthernet 0/1
+Sw-Lab1(config-if)# lldp receive
+Sw-Lab1(config-if)# lldp transmit
+```
+
+3. Show LLDP neighbors
+
+```txt
+Sw-Lab1# show lldp neighbors
 ```
