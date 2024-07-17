@@ -1,9 +1,9 @@
 ---
-title: 2. VLAN Configuration
+title: 4. Static Route
 type: docs
 ---
 
-# VLAN Configuration
+# Static Route
 
 ## Status
 

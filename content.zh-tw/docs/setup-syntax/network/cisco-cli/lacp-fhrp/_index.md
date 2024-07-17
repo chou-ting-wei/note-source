@@ -1,9 +1,9 @@
 ---
-title: 2. VLAN Configuration
+title: 7. LACP/FHRP/GRE
 type: docs
 ---
 
-# VLAN Configuration
+# LACP/FHRP/GRE
 
 ## Status
 

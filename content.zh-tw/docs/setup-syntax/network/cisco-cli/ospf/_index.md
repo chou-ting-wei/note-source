@@ -1,9 +1,9 @@
 ---
-title: 2. VLAN Configuration
+title: 6. OSPF Configuration
 type: docs
 ---
 
-# VLAN Configuration
+# OSPF Configuration
 
 ## Status
 

@@ -1,9 +1,9 @@
 ---
-title: 2. VLAN Configuration
+title: 5. RIP Configuration
 type: docs
 ---
 
-# VLAN Configuration
+# RIP Configuration
 
 ## Status
 

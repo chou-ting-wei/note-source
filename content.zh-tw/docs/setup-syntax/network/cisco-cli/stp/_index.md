@@ -1,9 +1,9 @@
 ---
-title: 2. VLAN Configuration
+title: 3. STP Configuration
 type: docs
 ---
 
-# VLAN Configuration
+# STP Configuration
 
 ## Status
 
