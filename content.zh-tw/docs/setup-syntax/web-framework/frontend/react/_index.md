@@ -11,9 +11,9 @@ type: docs
    ```sh
    npm install -g create-vite
    npm create vite@latest my-react-app -- --template react-ts
-   # Framework: React
-   # Variant: TypeScript
    ```
+   > Framework: React  
+   > Variant: TypeScript
 2. Install dependencies and run
    ```sh
    cd my-react-app
@@ -88,32 +88,26 @@ type: docs
    ```sh
    npm install react-helmet
    ```
-2. Implementing routing in your application
+2. Import and use `Helmet` in your component
 
    ```ts
-   // src/App.tsx
+   // src/pages/Home.tsx
    import { Helmet } from "react-helmet";
 
-   function App() {
+   const Home: React.FC = () => {
      return (
-       <Helmet>
-         <title>My Application</title>
-         <meta
-           name="description"
-           content="This is an example application demonstrating the use of React Helmet."
-         />
-         <meta property="og:title" content="My Application" />
-         <meta
-           property="og:description"
-           content="An example application demonstrating the use of React Helmet for managing document head."
-         />
-         <meta property="og:url" content="https://example.com" />
-         <meta property="og:site_name" content="My Application" />
-         <meta property="og:type" content="website" />
-         <meta property="og:updated_time" content="2024-07-16T00:00:00+00:00" />
-       </Helmet>
+       <div>
+         <Helmet>
+           <title>Home Page</title>
+           <meta
+             name="description"
+             content="This is the home page description"
+           />
+         </Helmet>
+         <h1>Welcome to the Home Page</h1>
+       </div>
      );
-   }
+   };
 
-   export default App;
+   export default Home;
    ```

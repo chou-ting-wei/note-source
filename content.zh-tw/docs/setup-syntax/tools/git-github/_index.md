@@ -92,12 +92,12 @@ type: docs
    # or
    git reset --hard <commit-hash>
    ```
-   > WARNING: This will discard all changes after the specified commit.
+   > &#x26a0;&#xfe0f;WARNING: This will discard all changes after the specified commit.
 3. Force Push the Changes
    ```sh
    git push --force
    ```
-   > WARNING: This can overwrite changes in the remote repository.
+   > &#x26a0;&#xfe0f;WARNING: This can overwrite changes in the remote repository.
 
 ## GitHub
 
@@ -108,11 +108,13 @@ type: docs
    ssh-keygen -t ed25519 -C "your_email@example.com"
    ```
 2. Copy the SSH public key to your clipboard
+
    ```sh
    cat ~/.ssh/id_ed25519.pub
-   # Then select and copy the contents of the id_ed25519.pub file
-   # displayed in the terminal to your clipboard
    ```
+
+   > Then select and copy the contents of the `id_ed25519.pub` file displayed in the terminal to your clipboard.
+
 3. Add a new SSH authentication key to your account
 
 ### GPG Key Setup

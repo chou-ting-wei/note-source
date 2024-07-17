@@ -128,7 +128,7 @@ SW-EC1f# show version
 
 ## Cisco Discovery Protocol
 
-1. Show all neighbors
+1. Show all CDP neighbors
 
    ```txt
    Sw-Lab1# show cdp neighbors
@@ -169,7 +169,7 @@ Sw-Lab1(config-if)# lldp receive
 Sw-Lab1(config-if)# lldp transmit
 ```
 
-3. Show LLDP neighbors
+3. Show all LLDP neighbors
 
 ```txt
 Sw-Lab1# show lldp neighbors
