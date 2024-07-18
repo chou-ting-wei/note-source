@@ -5,7 +5,9 @@ type: docs
 
 # Basic Operations
 
-## Navigate Between IOS Modes
+## Navigation and User Interface
+
+### Navigate Between IOS Modes
 
 1. Move between User EXEC mode and Privileged EXEC mode
    ```txt
@@ -28,7 +30,7 @@ type: docs
    Switch#
    ```
 
-## Commands Shortening
+### Commands Shortening
 
 Commands and keywords can be shortened to the minimum number of characters that identify a unique selection.
 
@@ -42,7 +44,7 @@ Switch# con t
 % Ambiguous command: “con t”
 ```
 
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
 | Shortcut              | Description                                            |
 | :-------------------- | :----------------------------------------------------- |
@@ -52,17 +54,9 @@ Switch# con t
 | Ctrl + Shift + 6      | Cancel Cisco IOS process.                              |
 | Up Arrow / Down Arrow | Scroll through previously entered commands.            |
 
-## Save the Running Configuration File
+## Device Configuration
 
-To save the running configuration to the startup configuration, use one of the following commands.
-
-```txt
-Switch# copy running-config startup-config
-% or
-Switch# write memory
-```
-
-## Configure Hostname
+### Configure Hostname
 
 ```txt
 Switch# configure terminal
@@ -70,7 +64,7 @@ Switch(config)# hostname <hostname>
 <hostname>(config)#
 ```
 
-## Configure Password
+### Configure Password
 
 1. Console Access password
 
@@ -88,7 +82,7 @@ Switch(config)# hostname <hostname>
    Switch(config)# enable password <password>
    ```
 
-## Configure Users and their Secrets
+### Configure Users and their Secrets
 
 1. Console Access secret
 
@@ -106,7 +100,7 @@ Switch(config)# hostname <hostname>
    Switch(config)# enable secret <password>
    ```
 
-## Banner Message Configuration
+### Banner Message Configuration
 
 The delimiter can be any character, being used to mark the start and end of message.
 
@@ -117,66 +111,7 @@ Switch(config)# banner motd !
 Switch(config)#
 ```
 
-## Verify and Monitor Cisco Device
-
-```txt
-Switch# show running-config
-Switch# show startup-config
-Switch# show interfaces
-Switch# show arp
-Switch# show version
-```
-
-## Cisco Discovery Protocol
-
-1. Show all CDP neighbors
-
-   ```txt
-   Switch# show cdp neighbors
-   ```
-
-2. Show details of one neighbor
-
-   ```txt
-   Switch# show cdp entry <device_id>
-   ```
-
-3. Disable CDP globally
-
-   ```txt
-   Switch(config)# no cdp run
-   ```
-
-4. Disable CDP for an interface
-
-   ```txt
-   Switch(config)# interface <interface>
-   Switch(config-if)# no cdp enable
-   ```
-
-## Link Layer Discovery Protocol
-
-1. Enable LLDP globally
-
-   ```txt
-   Switch(config)# lldp run
-   ```
-
-2. Enable LLDP for an interface
-
-   ```txt
-   Switch(config)# interface <interface>
-   Switch(config-if)# lldp receive
-   Switch(config-if)# lldp transmit
-   ```
-
-3. Show all LLDP neighbors
-
-   ```txt
-   Switch# show lldp neighbors
-   ```
-
-## SSH Configuration
+### SSH Configuration
 
 1. Configure hostname and domain name
 
@@ -205,7 +140,80 @@ Switch# show version
    Switch(config-line)# login local
    ```
 
-## Force Other Users to Logout
+### Save the Configuration File
+
+To save the running configuration to the startup configuration, use one of the following commands.
+
+```txt
+Switch# copy running-config startup-config
+% or
+Switch# write memory
+```
+
+### Verify and Monitor Cisco Device
+
+```txt
+Switch# show running-config
+Switch# show startup-config
+Switch# show interfaces
+Switch# show arp
+Switch# show version
+```
+
+## Network Discovery
+
+### Cisco Discovery Protocol
+
+1. Show all CDP neighbors
+
+   ```txt
+   Switch# show cdp neighbors
+   ```
+
+2. Show details of one neighbor
+
+   ```txt
+   Switch# show cdp entry <device_id>
+   ```
+
+3. Disable CDP globally
+
+   ```txt
+   Switch(config)# no cdp run
+   ```
+
+4. Disable CDP for an interface
+
+   ```txt
+   Switch(config)# interface <interface>
+   Switch(config-if)# no cdp enable
+   ```
+
+### Link Layer Discovery Protocol
+
+1. Enable LLDP globally
+
+   ```txt
+   Switch(config)# lldp run
+   ```
+
+2. Enable LLDP for an interface
+
+   ```txt
+   Switch(config)# interface <interface>
+   Switch(config-if)# lldp receive
+   Switch(config-if)# lldp transmit
+   ```
+
+3. Show all LLDP neighbors
+
+   ```txt
+   Switch# show lldp neighbors
+   ```
+
+## Device Management and Security
+
+### Force Other Users to Logout
 
 1. Check current connections
 
@@ -226,7 +234,7 @@ Switch# show version
    Switch# clear line vty <line_num>
    ```
 
-## Password Recovery
+### Password Recovery
 
 1. Initialize the flash file system
 
@@ -298,7 +306,7 @@ Switch# show version
    Switch# copy running-config startup-config
    ```
 
-## Reset the Switch
+### Reset the Switch
 
 1. Initialize the flash file system
 

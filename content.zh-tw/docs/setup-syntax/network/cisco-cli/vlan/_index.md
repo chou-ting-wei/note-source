@@ -5,7 +5,9 @@ type: docs
 
 # VLAN Configuration
 
-## Create VLAN
+## VLAN Setup
+
+### Create VLAN
 
 ```txt
 Switch# configure terminal
@@ -13,7 +15,7 @@ Switch(config)# vlan <vlan_num>
 Switch(config-vlan)# name <vlan_name> (optional)
 ```
 
-## Assign Port to VLAN
+### Assign Port to VLAN
 
 The interface is in a specific vlan, switch would forwards network traffic from those the same vlan to this interface.
 
@@ -23,7 +25,7 @@ Switch(config-if)# switchport mode access
 Switch(config-if)# switchport access vlan <vlan_num>
 ```
 
-## Available VLAN Ranges in Cisco IOS
+### Available VLAN Ranges
 
 | VLANs     | Range    | Usage                                                                                                                  |
 | :-------- | :------- | :--------------------------------------------------------------------------------------------------------------------- |
@@ -33,7 +35,9 @@ Switch(config-if)# switchport access vlan <vlan_num>
 | 1002-1005 | Normal   | You cannot delete VLANs 1002-1005.                                                                                     |
 | 1006-4094 | Extended | For Ethernet VLANs only.                                                                                               |
 
-## Configure Trunk Link
+## Trunk Configuration
+
+### Configure Trunk Link
 
 The interface would allowes some vlans, and switch would forwards network traffic from those allowed vlans.
 
@@ -44,40 +48,13 @@ Switch(config-if)# switchport mode trunk
 Switch(config-if)# switchport trunk allowed vlan {<vlan_list> | except <vlan_list> | all}
 ```
 
-## Modify Existing Trunk Link
+### Modify Existing Trunk Link
 
 ```txt
 Switch(config-if)# switchport trunk allowed vlan {add | remove} <vlan_list>
 ```
 
-## Create VLAN on Router/L3 Switch
-
-```txt
-Switch# configure terminal
-Switch(config)# vlan <vlan_num>
-Switch(config-vlan)# name <vlan_name> (optional)
-```
-
-## Configure VLAN Interface
-
-```txt
-Switch(config)# interface vlan <vlan_num>
-Switch(config-if)# ip address <ip_address> <subnet_mask>
-```
-
-## Set the Default Gateway
-
-```txt
-Switch(config-if)# ip default-gateway <ip_address>
-```
-
-## Enable Routing on L3 Switch
-
-```txt
-Switch(config)# ip routing
-```
-
-## Configure Native VLAN
+### Configure Native VLAN
 
 When a trunk interface transmit packet with its native VLAN, it will send the packet untagged.
 
@@ -85,6 +62,35 @@ When a trunk interface transmit packet with its native VLAN, it will send the pa
 Switch(config)# interface <interface>
 Switch(config-if)# switchport trunk encapsulation dot1q
 Switch(config-if)# switchport trunk native vlan <vlan_num>
+```
+
+## Layer 3 Switch Configuration
+
+### Create VLAN on Router/L3 Switch
+
+```txt
+Switch# configure terminal
+Switch(config)# vlan <vlan_num>
+Switch(config-vlan)# name <vlan_name> (optional)
+```
+
+### Configure VLAN Interface
+
+```txt
+Switch(config)# interface vlan <vlan_num>
+Switch(config-if)# ip address <ip_address> <subnet_mask>
+```
+
+### Set the Default Gateway
+
+```txt
+Switch(config-if)# ip default-gateway <ip_address>
+```
+
+### Enable Routing on L3 Switch
+
+```txt
+Switch(config)# ip routing
 ```
 
 ## Verify VLAN Configuration
