@@ -9,23 +9,23 @@ type: docs
 
 1. Move between User EXEC mode and Privileged EXEC mode
    ```txt
-   switch> enable
-   switch# disable
-   switch>
+   Switch> enable
+   Switch# disable
+   Switch>
    ```
 2. Move between Privileged EXEC mode and Global Configuration mode
    ```txt
-   switch# configure terminal
-   switch(config)# exit
-   switch#
+   Switch# configure terminal
+   Switch(config)# exit
+   Switch#
    ```
 3. Move from any sub-configuration mode to Privileged EXEC mode
    ```txt
-   switch(config-line)# end
-   switch#
+   Switch(config-line)# end
+   Switch#
    % or
-   switch(config-line)# Ctrl+Z
-   switch#
+   Switch(config-line)# Ctrl+Z
+   Switch#
    ```
 
 ## Commands Shortening
@@ -33,12 +33,12 @@ type: docs
 Commands and keywords can be shortened to the minimum number of characters that identify a unique selection.
 
 ```txt
-switch# conf t
-switch(config)#
+Switch# conf t
+Switch(config)#
 ```
 
 ```txt
-switch# con t
+Switch# con t
 % Ambiguous command: “con t”
 ```
 
@@ -57,16 +57,16 @@ switch# con t
 To save the running configuration to the startup configuration, use one of the following commands.
 
 ```txt
-switch# copy running-config startup-config
+Switch# copy running-config startup-config
 % or
-switch# write memory
+Switch# write memory
 ```
 
 ## Configure Hostnames
 
 ```txt
-switch# configure terminal
-switch(config)# hostname <hostname>
+Switch# configure terminal
+Switch(config)# hostname <hostname>
 <hostname>(config)#
 ```
 
@@ -75,17 +75,17 @@ switch(config)# hostname <hostname>
 1. Console Access password
 
    ```txt
-   switch(config)# line console 0
-   switch(config-line)# password <password>
-   switch(config-line)# login
-   switch(config-line)# exit
-   switch(config)#
+   Switch(config)# line console 0
+   Switch(config-line)# password <password>
+   Switch(config-line)# login
+   Switch(config-line)# exit
+   Switch(config)#
    ```
 
 2. Privileged EXEC Access password
 
    ```txt
-   switch(config)# enable password <password>
+   Switch(config)# enable password <password>
    ```
 
 ## Configure Users and their Secrets
@@ -93,17 +93,17 @@ switch(config)# hostname <hostname>
 1. Console Access secret
 
    ```txt
-   switch(config)# username <user> secret <password>
-   switch(config)# line console 0
-   switch(config-line)# login local
-   switch(config-line)# exit
-   switch(config)#
+   Switch(config)# username <user> secret <password>
+   Switch(config)# line console 0
+   Switch(config-line)# login local
+   Switch(config-line)# exit
+   Switch(config)#
    ```
 
 2. Privileged EXEC Access secret
 
    ```txt
-   switch(config)# enable secret <password>
+   Switch(config)# enable secret <password>
    ```
 
 ## Banner Messages
@@ -111,20 +111,20 @@ switch(config)# hostname <hostname>
 The delimiter can be any character, being used to mark the start and end of message.
 
 ```txt
-switch(config)# banner motd !
+Switch(config)# banner motd !
 <message>
 !
-switch(config)#
+Switch(config)#
 ```
 
 ## Verify and Monitor Cisco Device
 
 ```txt
-switch# show running-config
-switch# show startup-config
-switch# show interfaces
-switch# show arp
-switch# show version
+Switch# show running-config
+Switch# show startup-config
+Switch# show interfaces
+Switch# show arp
+Switch# show version
 ```
 
 ## Cisco Discovery Protocol
@@ -132,26 +132,26 @@ switch# show version
 1. Show all CDP neighbors
 
    ```txt
-   switch# show cdp neighbors
+   Switch# show cdp neighbors
    ```
 
 2. Show details of one neighbor
 
    ```txt
-   switch# show cdp entry <device_id>
+   Switch# show cdp entry <device_id>
    ```
 
 3. Disable CDP globally
 
    ```txt
-   switch(config)# no cdp run
+   Switch(config)# no cdp run
    ```
 
 4. Disable CDP for an interface
 
    ```txt
-   switch(config)# interface <interface_type> <interface_number>
-   switch(config-if)# no cdp enable
+   Switch(config)# interface <interface_type> <interface_number>
+   Switch(config-if)# no cdp enable
    ```
 
 ## Link Layer Discovery Protocol
@@ -159,19 +159,19 @@ switch# show version
 1. Enable LLDP globally
 
 ```txt
-switch(config)# lldp run
+Switch(config)# lldp run
 ```
 
 2. Enable LLDP for an interface
 
 ```txt
-switch(config)# interface <interface_type> <interface_number>
-switch(config-if)# lldp receive
-switch(config-if)# lldp transmit
+Switch(config)# interface <interface_type> <interface_number>
+Switch(config-if)# lldp receive
+Switch(config-if)# lldp transmit
 ```
 
 3. Show all LLDP neighbors
 
 ```txt
-switch# show lldp neighbors
+Switch# show lldp neighbors
 ```

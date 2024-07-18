@@ -18,22 +18,22 @@ type: docs
 ## Spanning Tree Mode Selection
 
 ```txt
-switch(config)# spanning-tree mode {stp | pvst | rapid-pvst | mst}
+Switch(config)# spanning-tree mode {stp | pvst | rapid-pvst | mst}
 ```
 
 ## Bridge Priority Setup
 
 ```txt
-switch(config)# spanning-tree vlan <vlan_id> root {primary | secondary}
+Switch(config)# spanning-tree vlan <vlan_id> root {primary | secondary}
 % or
-switch(config)# spanning-tree vlan <vlan_id> priority <value>
+Switch(config)# spanning-tree vlan <vlan_id> priority <value>
 ```
 
 ## STP Cost Settings
 
 ```txt
-switch(config)# interface <interface_type> <interface_number>
-switch(config-if)# spanning-tree vlan <vlan_id> cost <value>
+Switch(config)# interface <interface_type> <interface_number>
+Switch(config-if)# spanning-tree vlan <vlan_id> cost <value>
 ```
 
 ## STP Port States Overview
@@ -49,8 +49,14 @@ switch(config-if)# spanning-tree vlan <vlan_id> cost <value>
 ## STP Timer Settings
 
 ```txt
-switch(config)# spanning-tree vlan <vlan_id> root primary diameter <size>
+Switch(config)# spanning-tree vlan <vlan_id> root primary diameter <size>
 ```
+
+| Diameter      | 2   | 3   | 4   | 5   | 6   | 7   |
+| :------------ | :-- | :-- | :-- | :-- | :-- | :-- |
+| Hello Time    | 2   | 2   | 2   | 2   | 2   | 2   |
+| Max Age       | 10  | 12  | 14  | 16  | 18  | 20  |
+| Forward Delay | 7   | 9   | 10  | 12  | 13  | 15  |
 
 ## PortFast Configuration
 
@@ -59,33 +65,34 @@ switch(config)# spanning-tree vlan <vlan_id> root primary diameter <size>
 1. Configure PortFast on a switch port
 
    ```txt
-   switch(config)# interface <interface>
-   switch(config-if)# spanning-tree portfast
+   Switch(config)# interface <interface_type> <interface_number>
+   Switch(config-if)# spanning-tree portfast
    ```
 
 2. Enable PortFast on all non-trunking interfaces
 
    ```txt
-   switch(config)# spanning-tree portfast default
+   Switch(config)# spanning-tree portfast default
    ```
 
 ## BPDU Guard Configuration
 
 ```txt
-switch(config)# interface <interface>
-switch(config-if)# spanning-tree bpduguard enable
+Switch(config)# interface <interface_type> <interface_number>
+Switch(config-if)# spanning-tree bpduguard enable
 ```
 
 ## Root Guard Configuration
 
 ```txt
-switch(config)# interface <interface>
-switch(config-if)# spanning-tree guard root
+Switch(config)# interface <interface_type> <interface_number>
+Switch(config-if)# spanning-tree guard root
 ```
 
 ## STP Configuration Verification
+
 ```txt
-switch# show spanning-tree
-switch# show spanning-tree vlan <vlan_id>
-switch# show spanning-tree detail
+Switch# show spanning-tree
+Switch# show spanning-tree vlan <vlan_id>
+Switch# show spanning-tree detail
 ```

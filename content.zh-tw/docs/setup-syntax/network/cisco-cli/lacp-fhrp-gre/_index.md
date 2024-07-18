@@ -1,5 +1,5 @@
 ---
-title: 7. LACP/FHRP/GRE
+title: 6. LACP/FHRP/GRE
 type: docs
 ---
 
