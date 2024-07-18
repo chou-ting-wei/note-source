@@ -155,7 +155,7 @@ Router(config-router)# area 10 stub
 Eliminates Type 3, 4, and 5 LSA and must be configured consistently across all routers within the area.
 
 ```txt
-Router(config)# router ospf 42
+Router(config)# router ospf <process_id>
 Router(config-router)# area 10 stub no-summary
 ```
 
@@ -164,8 +164,7 @@ Router(config-router)# area 10 stub no-summary
 Use the `nssa` keyword instead of `stub` to prevent Type 5 AS External LSA flooding in a Not-So-Stubby Area.
 
 ```txt
-Router(config)# router ospf 42
-Router(config-router)# no area 20 stub
+Router(config)# router ospf <process_id>
 Router(config-router)# area 20 nssa
 ```
 
@@ -174,7 +173,7 @@ Router(config-router)# area 20 nssa
 Further reduce the table by eliminating Type 3, 4, 5 LSA.
 
 ```txt
-Router(config)# router ospf 42
+Router(config)# router ospf <process_id>
 Router(config-router)# area 20 nssa no-summary
 ```
 
@@ -285,14 +284,6 @@ Advertising Router: 140.113.0.10
 Network Mask: /0
 ```
 
-### Summary LSA Comparison
-
-| LSA Type                     | Purpose                                                                       | Contents                            | Usage                                                                                                        |
-| :--------------------------- | :---------------------------------------------------------------------------- | :---------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Type 3 Network Summary LSA   | Advertises routes between OSPF areas (inter-area)                             | Network address, subnet mask, cost  | Used by ABR to share routes between areas, helping OSPF routers determine routes to networks in other areas. |
-| Type 4 ASBR Summary LSA      | Advertises the location of an ASBR to other areas                             | Router ID of the ASBR, cost to ASBR | Enables routers in other areas to locate the ASBR and use it for routing to external destinations.           |
-| Type 3 Default Summary Route | Advertises a default route to areas that do not have full routing information | Default route (0.0.0.0/0), cost     | Used in stub areas to provide a path to external networks without needing specific external routes.          |
-
 ### Type 5 AS External LSA
 
 Advertise routes to external destinations of the OSPF routing domain.
@@ -317,3 +308,11 @@ Network Mask: /0
    The total (internal + external) cost is used when calculating the routing table.
 2. Type 2 Metric  
    The external cost dominates the total path cost, internal cost is considered only if multiple paths have the same external cost.
+
+### Summary LSA Comparison
+
+| LSA Type                     | Purpose                                                                       | Contents                            | Usage                                                                                                        |
+| :--------------------------- | :---------------------------------------------------------------------------- | :---------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Type 3 Network Summary LSA   | Advertises routes between OSPF areas (inter-area)                             | Network address, subnet mask, cost  | Used by ABR to share routes between areas, helping OSPF routers determine routes to networks in other areas. |
+| Type 4 ASBR Summary LSA      | Advertises the location of an ASBR to other areas                             | Router ID of the ASBR, cost to ASBR | Enables routers in other areas to locate the ASBR and use it for routing to external destinations.           |
+| Type 3 Default Summary Route | Advertises a default route to areas that do not have full routing information | Default route (0.0.0.0/0), cost     | Used in stub areas to provide a path to external networks without needing specific external routes.          |
