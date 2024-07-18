@@ -36,7 +36,7 @@ Switch(config)# spanning-tree vlan <vlan_id> priority <value>
 ## STP Cost Settings
 
 ```txt
-Switch(config)# interface <interface_type> <interface_number>
+Switch(config)# interface <interface_type> <interface_num>
 Switch(config-if)# spanning-tree vlan <vlan_id> cost <value>
 ```
 
@@ -61,7 +61,7 @@ Allow a port to enter from blocking to forwarding state immediately, bypassing t
 1. Configure PortFast on a switch port
 
    ```txt
-   Switch(config)# interface <interface_type> <interface_number>
+   Switch(config)# interface <interface_type> <interface_num>
    Switch(config-if)# spanning-tree portfast
    ```
 
@@ -76,7 +76,7 @@ Allow a port to enter from blocking to forwarding state immediately, bypassing t
 If BPDU guard is enabled, it puts the port in an `err-disabled` state when receiving a BPDU.
 
 ```txt
-Switch(config)# interface <interface_type> <interface_number>
+Switch(config)# interface <interface_type> <interface_num>
 Switch(config-if)# spanning-tree bpduguard enable
 ```
 
@@ -85,7 +85,7 @@ Switch(config-if)# spanning-tree bpduguard enable
 If there is a superior BPDU received on the port, root guard does not take the BPDU into account and so puts the port into `root inconsistent` state.
 
 ```txt
-Switch(config)# interface <interface_type> <interface_number>
+Switch(config)# interface <interface_type> <interface_num>
 Switch(config-if)# spanning-tree guard root
 ```
 

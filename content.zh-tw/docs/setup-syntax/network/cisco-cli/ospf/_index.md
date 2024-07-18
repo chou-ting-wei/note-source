@@ -3,15 +3,6 @@ title: 5. OSPF Configuration
 type: docs
 ---
 
-<!--
-Check this post:
-1. Fix each title to make it looks more professionally
-2. All variables(not included in {} part, e.g. {ip-address | exit-intf} should not be modified) should be enclosed in <> replaced with placeholders using underscores and all lowercase, with the common used variables, like <network_address>, <subnet_mask>, <interface_type>, <interface_number>...
-3. Check if exist any error in all command
-4. Make all the cisco commands to start with Switch or Router, such as Switch#, Router(config)#
-5. Generate in txt code block
--->
-
 # OSPF Configuration
 
 ## Single Area OSPF Configuration
@@ -50,7 +41,7 @@ Router# show ip protocols
 2. Per-interface configuration
 
    ```txt
-   Router(config)# interface <interface_type> <interface_number>
+   Router(config)# interface <interface_type> <interface_num>
    Router(config-if)# ip ospf <process_id> area 0
    ```
 
@@ -69,7 +60,7 @@ Router# clear ip ospf process
 ### Set interface priority
 
 ```txt
-Router(config)# interface <interface_type> <interface_number>
+Router(config)# interface <interface_type> <interface_num>
 Router(config-if)# ip ospf priority 255
 Router(config-if)# end
 ```
@@ -77,7 +68,7 @@ Router(config-if)# end
 ### Propagate Default Route
 
 ```txt
-Router(config)# ip route 0.0.0.0 0.0.0.0 <interface_type> <interface_number>
+Router(config)# ip route 0.0.0.0 0.0.0.0 <interface_type> <interface_num>
 Router(config)# router ospf <process_id>
 Router(config-router)# default-information originate
 ```
@@ -88,13 +79,13 @@ Router(config-router)# default-information originate
 
    ```txt
    Router(config-router)# passive-interface default
-   Router(config-router)# no passive-interface <interface_type> <interface_number>
+   Router(config-router)# no passive-interface <interface_type> <interface_num>
    ```
 
 2. Specific passive interface
 
    ```txt
-   Router(config-router)# passive-interface <interface_type> <interface_number>
+   Router(config-router)# passive-interface <interface_type> <interface_num>
    ```
 
 ### Adjust Reference Bandwidth
@@ -111,7 +102,7 @@ Router(config-router)# auto-cost reference-bandwidth 10000 (Bandwidth in Mbps)
 All interfaces have default bandwidth values assigned to them.
 
 ```txt
-Router(config)# interface <interface_type> <interface_number>
+Router(config)# interface <interface_type> <interface_num>
 Router(config-if)# bandwidth 100000 (Bandwidth in Kbps)
 ```
 
@@ -120,7 +111,7 @@ Router(config-if)# bandwidth 100000 (Bandwidth in Kbps)
 Administrators can also manually modify the cost of each interface.
 
 ```txt
-Router(config)# interface <interface_type> <interface_number>
+Router(config)# interface <interface_type> <interface_num>
 Router(config-if)# ip ospf cost 100
 ```
 
@@ -139,7 +130,17 @@ Router# show ip route <network_address>
 ```txt
 Router(config)# router ospf <process_id>
 Router(config-router)# redistribute rip subnets
+Router(config-router)# redistribute rip metric-type 1
 ```
+
+#### Metric Types for Type 5 LSA
+
+The metric for external routes can be Type 1 Metric or Type 2 Metric.
+
+1. Type 1 Metric  
+   The total (internal + external) cost is used when calculating the routing table.
+2. Type 2 Metric  
+   The external cost dominates the total path cost, internal cost is considered only if multiple paths have the same external cost.
 
 ### Convert to Stub Area
 
@@ -301,13 +302,6 @@ Link State ID: 0.0.0.0 (External Network Number)
 Advertising Router: 140.113.0.1
 Network Mask: /0
 ```
-
-#### Metric Types for Type 5 LSA
-
-1. Type 1 Metric  
-   The total (internal + external) cost is used when calculating the routing table.
-2. Type 2 Metric  
-   The external cost dominates the total path cost, internal cost is considered only if multiple paths have the same external cost.
 
 ### Summary LSA Comparison
 
