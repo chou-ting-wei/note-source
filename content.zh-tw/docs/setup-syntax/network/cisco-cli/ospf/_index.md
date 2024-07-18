@@ -41,7 +41,7 @@ Router# show ip protocols
 2. Per-interface configuration
 
    ```txt
-   Router(config)# interface <interface_type> <interface_num>
+   Router(config)# interface <interface>
    Router(config-if)# ip ospf <process_id> area 0
    ```
 
@@ -60,7 +60,7 @@ Router# clear ip ospf process
 ### Set interface priority
 
 ```txt
-Router(config)# interface <interface_type> <interface_num>
+Router(config)# interface <interface>
 Router(config-if)# ip ospf priority 255
 Router(config-if)# end
 ```
@@ -68,7 +68,7 @@ Router(config-if)# end
 ### Propagate Default Route
 
 ```txt
-Router(config)# ip route 0.0.0.0 0.0.0.0 <interface_type> <interface_num>
+Router(config)# ip route 0.0.0.0 0.0.0.0 <interface>
 Router(config)# router ospf <process_id>
 Router(config-router)# default-information originate
 ```
@@ -79,13 +79,13 @@ Router(config-router)# default-information originate
 
    ```txt
    Router(config-router)# passive-interface default
-   Router(config-router)# no passive-interface <interface_type> <interface_num>
+   Router(config-router)# no passive-interface <interface>
    ```
 
 2. Specific passive interface
 
    ```txt
-   Router(config-router)# passive-interface <interface_type> <interface_num>
+   Router(config-router)# passive-interface <interface>
    ```
 
 ### Adjust Reference Bandwidth
@@ -102,7 +102,7 @@ Router(config-router)# auto-cost reference-bandwidth 10000 (Bandwidth in Mbps)
 All interfaces have default bandwidth values assigned to them.
 
 ```txt
-Router(config)# interface <interface_type> <interface_num>
+Router(config)# interface <interface>
 Router(config-if)# bandwidth 100000 (Bandwidth in Kbps)
 ```
 
@@ -111,7 +111,7 @@ Router(config-if)# bandwidth 100000 (Bandwidth in Kbps)
 Administrators can also manually modify the cost of each interface.
 
 ```txt
-Router(config)# interface <interface_type> <interface_num>
+Router(config)# interface <interface>
 Router(config-if)# ip ospf cost 100
 ```
 

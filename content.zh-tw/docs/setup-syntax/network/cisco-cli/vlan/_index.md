@@ -18,7 +18,7 @@ Switch(config-vlan)# name <vlan_name> (optional)
 The interface is in a specific vlan, switch would forwards network traffic from those the same vlan to this interface.
 
 ```txt
-Switch(config)# interface <interface_type> <interface_num>
+Switch(config)# interface <interface>
 Switch(config-if)# switchport mode access
 Switch(config-if)# switchport access vlan <vlan_num>
 ```
@@ -38,7 +38,7 @@ Switch(config-if)# switchport access vlan <vlan_num>
 The interface would allowes some vlans, and switch would forwards network traffic from those allowed vlans.
 
 ```txt
-Switch(config)# interface <interface_type> <interface_num>
+Switch(config)# interface <interface>
 Switch(config-if)# switchport trunk encapsulation {isl | dot1q | negotiate}
 Switch(config-if)# switchport mode trunk
 Switch(config-if)# switchport trunk allowed vlan {<vlan_list> | except <vlan_list> | all}
@@ -76,7 +76,7 @@ Switch(config)# ip routing
 When a trunk interface transmit packet with its native VLAN, it will send the packet untagged.
 
 ```txt
-Switch(config)# interface <interface_type> <interface_num>
+Switch(config)# interface <interface>
 Switch(config-if)# switchport trunk encapsulation dot1q
 Switch(config-if)# switchport trunk native vlan <vlan_num>
 ```

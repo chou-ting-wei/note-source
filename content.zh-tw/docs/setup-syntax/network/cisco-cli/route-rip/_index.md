@@ -89,11 +89,11 @@ Passive interface is a feature used by routing protocol to stop sending updates 
 
    ```txt
    Router(config-router)# passive-interface default
-   Router(config-router)# no passive-interface <interface_type> <interface_num>
+   Router(config-router)# no passive-interface <interface>
    ```
 
 2. Specific passive interface
 
    ```txt
-   Router(config-router)# passive-interface <interface_type> <interface_num>
+   Router(config-router)# passive-interface <interface>
    ```

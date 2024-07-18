@@ -150,7 +150,7 @@ Switch# show version
 4. Disable CDP for an interface
 
    ```txt
-   Switch(config)# interface <interface_type> <interface_num>
+   Switch(config)# interface <interface>
    Switch(config-if)# no cdp enable
    ```
 
@@ -165,7 +165,7 @@ Switch# show version
 2. Enable LLDP for an interface
 
    ```txt
-   Switch(config)# interface <interface_type> <interface_num>
+   Switch(config)# interface <interface>
    Switch(config-if)# lldp receive
    Switch(config-if)# lldp transmit
    ```
