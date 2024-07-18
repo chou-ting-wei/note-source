@@ -44,13 +44,13 @@ switch# con t
 
 ## Keyboard Shortcuts
 
-| Shortcut              | Description                                           |
-| :-------------------- | :---------------------------------------------------- |
-| ?                     | List available commands                               |
-| Tab                   | Autocomplete & check if the current command is viable |
-| Ctrl + Z              | Return to Privileged EXEC Mode                        |
-| Ctrl + Shift + 6      | Cancel Cisco IOS process                              |
-| Up Arrow / Down Arrow | Scroll through previously entered commands            |
+| Shortcut              | Description                                            |
+| :-------------------- | :----------------------------------------------------- |
+| ?                     | List available commands.                               |
+| Tab                   | Autocomplete & check if the current command is viable. |
+| Ctrl + Z              | Return to Privileged EXEC Mode.                        |
+| Ctrl + Shift + 6      | Cancel Cisco IOS process.                              |
+| Up Arrow / Down Arrow | Scroll through previously entered commands.            |
 
 ## Save the Running Configuration File
 
@@ -75,17 +75,17 @@ SW-EC1f(config)#
 1. Console Access password
 
    ```txt
-   SW-EC1f(config)# line console 0
-   SW-EC1f(config-line)# password passwd1
-   SW-EC1f(config-line)# login
-   SW-EC1f(config-line)# exit
-   SW-EC1f(config)#
+   switch(config)# line console 0
+   switch(config-line)# password passwd1
+   switch(config-line)# login
+   switch(config-line)# exit
+   switch(config)#
    ```
 
 2. Privileged EXEC Access password
 
    ```txt
-   SW-EC1f(config)# enable password passwd2
+   switch(config)# enable password passwd2
    ```
 
 ## Configure Users and their Secrets
@@ -93,17 +93,17 @@ SW-EC1f(config)#
 1. Console Access secret
 
    ```txt
-   SW-EC1f(config)# username user secret passwd3
-   SW-EC1f(config)# line console 0
-   SW-EC1f(config-line)# login local
-   SW-EC1f(config-line)# exit
-   SW-EC1f(config)#
+   switch(config)# username user secret passwd3
+   switch(config)# line console 0
+   switch(config-line)# login local
+   switch(config-line)# exit
+   switch(config)#
    ```
 
 2. Privileged EXEC Access secret
 
    ```txt
-   SW-EC1f(config)# enable secret passwd4
+   switch(config)# enable secret passwd4
    ```
 
 ## Banner Messages
@@ -111,19 +111,19 @@ SW-EC1f(config)#
 The delimiter can be any character, being used to mark the start and end of message.
 
 ```txt
-SW-EC1f(config)# banner motd !
+switch(config)# banner motd !
 helloworld hellloflvksdflsdk!
-SW-EC1f(config)#
+switch(config)#
 ```
 
 ## Verify and Monitor Cisco Device
 
 ```txt
-SW-EC1f# show running-config
-SW-EC1f# show startup-config
-SW-EC1f# show interfaces
-SW-EC1f# show arp
-SW-EC1f# show version
+switch# show running-config
+switch# show startup-config
+switch# show interfaces
+switch# show arp
+switch# show version
 ```
 
 ## Cisco Discovery Protocol
@@ -131,26 +131,26 @@ SW-EC1f# show version
 1. Show all CDP neighbors
 
    ```txt
-   Sw-Lab1# show cdp neighbors
+   switch# show cdp neighbors
    ```
 
 2. Show details of one neighbor
 
    ```txt
-   Sw-Lab1# show cdp entry Device-ID
+   switch# show cdp entry Device-ID
    ```
 
 3. Disable CDP globally
 
    ```txt
-   Sw-Lab1(config)# no cdp run
+   switch(config)# no cdp run
    ```
 
 4. Disable CDP for an interface
 
    ```txt
-   Sw-Lab1(config)# interface fastEthernet 0/1
-   Sw-Lab1(config-if)# no cdp enable
+   switch(config)# interface fastEthernet 0/1
+   switch(config-if)# no cdp enable
    ```
 
 ## Link Layer Discovery Protocol
@@ -158,19 +158,19 @@ SW-EC1f# show version
 1. Enable LLDP globally
 
 ```txt
-Sw-Lab1(config)# lldp run
+switch(config)# lldp run
 ```
 
 2. Enable LLDP for an interface
 
 ```txt
-Sw-Lab1(config)# interface fastEthernet 0/1
-Sw-Lab1(config-if)# lldp receive
-Sw-Lab1(config-if)# lldp transmit
+switch(config)# interface fastEthernet 0/1
+switch(config-if)# lldp receive
+switch(config-if)# lldp transmit
 ```
 
 3. Show all LLDP neighbors
 
 ```txt
-Sw-Lab1# show lldp neighbors
+switch# show lldp neighbors
 ```
