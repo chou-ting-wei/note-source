@@ -158,20 +158,20 @@ Switch# show version
 
 1. Enable LLDP globally
 
-```txt
-Switch(config)# lldp run
-```
+   ```txt
+   Switch(config)# lldp run
+   ```
 
 2. Enable LLDP for an interface
 
-```txt
-Switch(config)# interface <interface_type> <interface_number>
-Switch(config-if)# lldp receive
-Switch(config-if)# lldp transmit
-```
+   ```txt
+   Switch(config)# interface <interface_type> <interface_number>
+   Switch(config-if)# lldp receive
+   Switch(config-if)# lldp transmit
+   ```
 
 3. Show all LLDP neighbors
 
-```txt
-Switch# show lldp neighbors
-```
+   ```txt
+   Switch# show lldp neighbors
+   ```

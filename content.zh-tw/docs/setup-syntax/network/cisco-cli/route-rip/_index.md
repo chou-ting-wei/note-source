@@ -3,9 +3,13 @@ title: 4. Static Route/RIP
 type: docs
 ---
 
-# Static Route
+# Static Route/RIP
 
-## Administrative Distance
+## Static Route
+
+### Administrative Distance
+
+Trustworthiness of the route source: lower values indicate more preferred route sources.
 
 | Route Source        | Administrative Distance |
 | :------------------ | :---------------------- |
@@ -20,45 +24,40 @@ type: docs
 | External EIGRP      | 170                     |
 | Internal BGP        | 200                     |
 
-## Configure a Static Route
+### Configure a Static Route
 
 ```txt
 Router(config)# ip route <network_address> <subnet_mask> {ip-address | exit-intf}
 ```
 
-## Viewing the IP Routing Table
+### Viewing the IP Routing Table
 
 ```txt
 Router# show ip route
-Codes: L - local, C - connected, S - static, R - RIP , M - mobile, B - BGP
-D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
-N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
-E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
-i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
-* - candidate default, U - per-user static route, o - ODR
-P - periodic downloaded static route
 ```
 
-## Configure a Default Static Route
+### Configure Default Static Route
 
 ```txt
 Router(config)# ip route 0.0.0.0 0.0.0.0 {ip-address | exit-intf}
 ```
 
-## Enable RIP
+## RIP
+
+### Enable RIP
 
 ```txt
 Router(config)# router rip
 Router(config-router)#
 ```
 
-## Start RIP routing
+### Start RIP routing
 
 ```txt
 Router(config-router)# network <subnet>
 ```
 
-## Propagate a Default Route
+### Propagate Default Static Route
 
 ```txt
 Router(config)# ip route 0.0.0.0 0.0.0.0 {ip-address | exit-intf}
@@ -66,32 +65,35 @@ Router(config)# router rip
 Router(config-router)# default-information originate
 ```
 
-## Enable RIPv2
+### Enable RIPv2
+
+Make RIP a classless routing protocol.
 
 ```txt
-Router(config)# router rip
 Router(config-router)# version 2
 ```
 
-## Disable Auto Summarization
+### Disable Auto Summarization
+
+When automatic summarization has been disabled, RIPv2 no longer summarizes networks to their classful address at boundary routers.
 
 ```txt
-Router(config)# router rip
 Router(config-router)# no auto-summary
 ```
 
-## Configure Passive Interface
+### Configure Passive Interface
 
-1. Passive all and no specific
+Passive interface is a feature used by routing protocol to stop sending updates on the particular interface.
 
-```txt
-Router(config)# router rip
-Router(config-router)# passive-interface default
-Router(config-router)# no passive-interface <interface_type> <interface_number>
-```
+1. Passive by default
 
-2. Passive specific
+   ```txt
+   Router(config-router)# passive-interface default
+   Router(config-router)# no passive-interface <interface_type> <interface_number>
+   ```
 
-```txt
-Router(config-router)# passive-interface <interface_type> <interface_number>
-```
+2. Specific passive interface
+
+   ```txt
+   Router(config-router)# passive-interface <interface_type> <interface_number>
+   ```

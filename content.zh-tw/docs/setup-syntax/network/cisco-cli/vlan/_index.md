@@ -15,6 +15,8 @@ Switch(config-vlan)# name <vlan_name> (optional)
 
 ## Assign Port to VLAN
 
+The interface is in a specific vlan, switch would forwards network traffic from those the same vlan to this interface.
+
 ```txt
 Switch(config)# interface <interface_type> <interface_number>
 Switch(config-if)# switchport mode access
@@ -32,6 +34,8 @@ Switch(config-if)# switchport access vlan <vlan_num>
 | 1006-4094 | Extended | For Ethernet VLANs only.                                                                                               |
 
 ## Configure Trunk Link
+
+The interface would allowes some vlans, and switch would forwards network traffic from those allowed vlans.
 
 ```txt
 Switch(config)# interface <interface_type> <interface_number>
@@ -68,6 +72,8 @@ Switch(config)# ip routing
 ```
 
 ## Configure Native VLAN
+
+When a trunk interface transmit packet with its native VLAN, it will send the packet untagged.
 
 ```txt
 Switch(config)# interface <interface_type> <interface_number>

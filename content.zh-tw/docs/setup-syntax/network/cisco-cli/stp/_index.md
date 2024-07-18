@@ -17,11 +17,15 @@ type: docs
 
 ## Spanning Tree Mode Selection
 
+Cisco IOS use PVST+ as default mode.
+
 ```txt
 Switch(config)# spanning-tree mode {stp | pvst | rapid-pvst | mst}
 ```
 
 ## Bridge Priority Setup
+
+Bridge priority only allows to be in multiple of 4096.
 
 ```txt
 Switch(config)# spanning-tree vlan <vlan_id> root {primary | secondary}
@@ -46,21 +50,13 @@ Switch(config-if)# spanning-tree vlan <vlan_id> cost <value>
 | Learning   | O            | O         | O         | X          | Forward Delay (default 15s)                |
 | Forwarding | O            | O         | O         | O          | Until shutdown or not root/designated port |
 
-## STP Timer Settings
+## STP Enhancements
 
-```txt
-Switch(config)# spanning-tree vlan <vlan_id> root primary diameter <size>
-```
-
-| Diameter      | 2   | 3   | 4   | 5   | 6   | 7   |
-| :------------ | :-- | :-- | :-- | :-- | :-- | :-- |
-| Hello Time    | 2   | 2   | 2   | 2   | 2   | 2   |
-| Max Age       | 10  | 12  | 14  | 16  | 18  | 20  |
-| Forward Delay | 7   | 9   | 10  | 12  | 13  | 15  |
-
-## PortFast Configuration
+### PortFast Configuration
 
 > &#x26a0;&#xfe0f;**Warning:** PortFast should only be enabled on ports connected to a single host. Connecting hubs, concentrators, switches, bridges, etc., to this interface when PortFast is enabled can cause temporary bridging loops.
+
+Allow a port to enter from blocking to forwarding state immediately, bypassing the listening and learning states.
 
 1. Configure PortFast on a switch port
 
@@ -75,21 +71,25 @@ Switch(config)# spanning-tree vlan <vlan_id> root primary diameter <size>
    Switch(config)# spanning-tree portfast default
    ```
 
-## BPDU Guard Configuration
+### BPDU Guard Configuration
+
+If BPDU guard is enabled, it puts the port in an `err-disabled` state when receiving a BPDU.
 
 ```txt
 Switch(config)# interface <interface_type> <interface_number>
 Switch(config-if)# spanning-tree bpduguard enable
 ```
 
-## Root Guard Configuration
+### Root Guard Configuration
+
+If there is a superior BPDU received on the port, root guard does not take the BPDU into account and so puts the port into `root inconsistent` state.
 
 ```txt
 Switch(config)# interface <interface_type> <interface_number>
 Switch(config-if)# spanning-tree guard root
 ```
 
-## STP Configuration Verification
+### STP Configuration Verification
 
 ```txt
 Switch# show spanning-tree
