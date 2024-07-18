@@ -9,16 +9,16 @@ type: docs
 
 ```txt
 switch# configure terminal
-switch(config)# vlan vlan-num
-switch(config-vlan)# name vlan-name (optional)
+switch(config)# vlan <vlan_num>
+switch(config-vlan)# name <vlan_name> (optional)
 ```
 
 ## Assign Port to VLAN
 
 ```txt
-switch(config)# interface type interface_number
+switch(config)# interface <type> <interface_number>
 switch(config-if)# switchport mode access
-switch(config-if)# switchport access vlan vlan-num
+switch(config-if)# switchport access vlan <vlan_num>
 ```
 
 ## Available VLAN Ranges in Cisco IOS
@@ -34,30 +34,31 @@ switch(config-if)# switchport access vlan vlan-num
 ## Configure Trunk Link
 
 ```txt
-switch(config)# interface type interface_number
-switch(config-if)# switchport trunk encapsulation {isl|dot1q|negotiate}
+switch(config)# interface <type> <interface_number>
+switch(config-if)# switchport trunk encapsulation {isl | dot1q | negotiate}
 switch(config-if)# switchport mode trunk
-switch(config-if)# switchport trunk allowed vlan {vlan-list|except vlan-list|all}
+switch(config-if)# switchport trunk allowed vlan {<vlan_list> | except <vlan_list> | all}
 ```
 
 ## Modify Existing Trunk Link
 
 ```txt
-switch(config-if)# switchport trunk allowed vlan {add|remove} vlan-list
+switch(config-if)# switchport trunk allowed vlan {add | remove} <vlan_list>
 ```
 
 ## Create VLAN on Router/L3 Switch
 
 ```txt
-switch(config)# vlan vlan-num
-switch(config-if)# name vlan-name (optional)
+switch# configure terminal
+switch(config)# vlan <vlan_num>
+switch(config-vlan)# name <vlan_name> (optional)
 ```
 
 ## Configure VLAN Interface
 
 ```txt
-switch(config)# interface vlan vlan-num
-switch(config-if)# ip address ip-address subnet-mask
+switch(config)# interface vlan <vlan_num>
+switch(config-if)# ip address <ip_address> <subnet_mask>
 ```
 
 ## Enable Routing on L3 Switch
@@ -69,14 +70,15 @@ switch(config)# ip routing
 ## Configure Native VLAN
 
 ```txt
-switch(config)# interface type interface_number
+switch(config)# interface <type> <interface_number>
 switch(config-if)# switchport trunk encapsulation dot1q
-switch(config-if)# switchport trunk native vlan vlan-num
+switch(config-if)# switchport trunk native vlan <vlan_num>
 ```
 
 ## Verify VLAN Configuration
+
 ```txt
 switch# show vlan brief
-switch# show vlan id vlan-num
-switch# show interface vlan vlan-num
+switch# show vlan id <vlan_num>
+switch# show interface vlan <vlan_num>
 ```

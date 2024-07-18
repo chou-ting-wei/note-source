@@ -66,8 +66,8 @@ switch# write memory
 
 ```txt
 switch# configure terminal
-switch(config)# hostname SW-EC1f
-SW-EC1f(config)#
+switch(config)# hostname <hostname>
+<hostname>(config)#
 ```
 
 ## Configure Passwords
@@ -76,7 +76,7 @@ SW-EC1f(config)#
 
    ```txt
    switch(config)# line console 0
-   switch(config-line)# password passwd1
+   switch(config-line)# password <password>
    switch(config-line)# login
    switch(config-line)# exit
    switch(config)#
@@ -85,7 +85,7 @@ SW-EC1f(config)#
 2. Privileged EXEC Access password
 
    ```txt
-   switch(config)# enable password passwd2
+   switch(config)# enable password <password>
    ```
 
 ## Configure Users and their Secrets
@@ -93,7 +93,7 @@ SW-EC1f(config)#
 1. Console Access secret
 
    ```txt
-   switch(config)# username user secret passwd3
+   switch(config)# username <user> secret <password>
    switch(config)# line console 0
    switch(config-line)# login local
    switch(config-line)# exit
@@ -103,7 +103,7 @@ SW-EC1f(config)#
 2. Privileged EXEC Access secret
 
    ```txt
-   switch(config)# enable secret passwd4
+   switch(config)# enable secret <password>
    ```
 
 ## Banner Messages
@@ -112,7 +112,8 @@ The delimiter can be any character, being used to mark the start and end of mess
 
 ```txt
 switch(config)# banner motd !
-helloworld hellloflvksdflsdk!
+<message>
+!
 switch(config)#
 ```
 
@@ -137,7 +138,7 @@ switch# show version
 2. Show details of one neighbor
 
    ```txt
-   switch# show cdp entry Device-ID
+   switch# show cdp entry <device_id>
    ```
 
 3. Disable CDP globally
@@ -149,7 +150,7 @@ switch# show version
 4. Disable CDP for an interface
 
    ```txt
-   switch(config)# interface fastEthernet 0/1
+   switch(config)# interface <interface_type> <interface_number>
    switch(config-if)# no cdp enable
    ```
 
@@ -164,7 +165,7 @@ switch(config)# lldp run
 2. Enable LLDP for an interface
 
 ```txt
-switch(config)# interface fastEthernet 0/1
+switch(config)# interface <interface_type> <interface_number>
 switch(config-if)# lldp receive
 switch(config-if)# lldp transmit
 ```

@@ -27,18 +27,18 @@ type: docs
 
 1. Switch to an existing branch
    ```sh
-   git checkout <branch-name>
+   git checkout <branch_name>
    ```
 2. Create a new branch and switch to it
    ```sh
-   git checkout -b <new-branch-name>
+   git checkout -b <new_branch_name>
    ```
 
 ### Submodule Management
 
 1. Add a new submodule to the repository
    ```sh
-   git submodule add <repository-url> <path>
+   git submodule add <repository_url> <path>
    ```
 2. Initialize, fetch and checkout the submodule
    ```sh
@@ -47,7 +47,7 @@ type: docs
 
 ### Commit Reversion
 
-> &#x26a0;&#xfe0f;WARNING: Reverting commits can potentially lead to loss of work. Ensure you have backups or have communicated with your team before performing these actions.
+> &#x26a0;&#xfe0f;**Warning:** Reverting commits can potentially lead to loss of work. Ensure you have backups or have communicated with your team before performing these actions.
 
 1. Identify the Commit
    ```sh
@@ -57,7 +57,7 @@ type: docs
    ```sh
    git reset --hard HEAD~1
    # or
-   git reset --hard <commit-hash>
+   git reset --hard <commit_hash>
    ```
    > This will discard all changes after the specified commit.
 3. Force Push the Changes
@@ -85,7 +85,7 @@ type: docs
    > Remove the conflict markers and decide what the final content should be.
 3. Add the resolved file to the staging area
    ```sh
-   git add <file-name>
+   git add <file_name>
    ```
 4. Commit the resolved changes
 
