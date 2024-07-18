@@ -5,7 +5,7 @@ type: docs
 
 # OSPF Configuration
 
-## Single Area OSPF Configuration
+## Single Area OSPF
 
 ### Configure Loopback Interface
 
