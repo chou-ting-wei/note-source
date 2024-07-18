@@ -13,7 +13,7 @@ An always-up interface which you can assign an IP address (Layer 3).
 
 ```txt
 Router(config)# interface loopback 0
-Router(config-if)# ip address <network_address> <subnet_mask>
+Router(config-if)# ip address <ip_address> <subnet_mask>
 ```
 
 ### Enable OSPF
@@ -35,7 +35,7 @@ Router# show ip protocols
 
    ```txt
    Router(config)# router ospf <process_id>
-   Router(config-router)# network <network_address> <wildcard> area 0
+   Router(config-router)# network <ip_address> <wildcard> area 0
    ```
 
 2. Per-interface configuration
@@ -120,7 +120,7 @@ Router(config-if)# ip ospf cost 100
 The cost of an OSPF route is the accumulated value from one router to the destination network.
 
 ```txt
-Router# show ip route <network_address>
+Router# show ip route <ip_address>
 ```
 
 ## Multi Area OSPF

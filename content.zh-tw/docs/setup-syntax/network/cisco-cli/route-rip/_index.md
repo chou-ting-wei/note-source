@@ -27,7 +27,7 @@ Trustworthiness of the route source: lower values indicate more preferred route 
 ### Configure a Static Route
 
 ```txt
-Router(config)# ip route <network_address> <subnet_mask> {ip-address | exit-intf}
+Router(config)# ip route <ip_address> <subnet_mask> {ip-address | exit-intf}
 ```
 
 ### Viewing the IP Routing Table

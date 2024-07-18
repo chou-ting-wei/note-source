@@ -65,6 +65,12 @@ Switch(config)# interface vlan <vlan_num>
 Switch(config-if)# ip address <ip_address> <subnet_mask>
 ```
 
+## Set the Default Gateway
+
+```txt
+Switch(config-if)# ip default-gateway <ip_address>
+```
+
 ## Enable Routing on L3 Switch
 
 ```txt
