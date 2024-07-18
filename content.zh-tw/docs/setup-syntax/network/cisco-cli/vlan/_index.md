@@ -64,9 +64,9 @@ Switch(config-if)# switchport trunk encapsulation dot1q
 Switch(config-if)# switchport trunk native vlan <vlan_num>
 ```
 
-## Layer 3 Switch Configuration
+## L3 Switch Configuration
 
-### Create VLAN on Router/L3 Switch
+### Create VLAN on L3 Switch
 
 ```txt
 Switch# configure terminal
