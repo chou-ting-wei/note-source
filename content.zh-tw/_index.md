@@ -26,8 +26,10 @@ type: docs
 
 如有任何問題或疑問，歡迎隨時聯絡我。更多個人資訊和聯絡方式，請參考我的個人資料頁面：[userwei's Profile](https://profile.userwei.com/)。
 
-<!-- # Construction
+<!--
+# Under Construction
 
-## Status
+## Current Status
 
-This page is currently under construction. More details and examples will be added soon. -->
+This page is actively being developed. Please check back soon for updates and additional content.
+-->

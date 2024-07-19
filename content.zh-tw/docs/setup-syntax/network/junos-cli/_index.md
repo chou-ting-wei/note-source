@@ -1,9 +1,10 @@
 ---
-title: React
+# bookCollapseSection: true
+title: Junos OS CLI
 type: docs
 ---
 
-<!-- # React -->
+<!-- # Junos OS CLI -->
 
 # Under Construction
 
