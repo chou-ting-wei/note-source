@@ -35,7 +35,7 @@ Router# show ip protocols
 
    ```txt
    Router(config)# router ospf <process_id>
-   Router(config-router)# network <ip_address> <wildcard> area 0
+   Router(config-router)# network <ip_address> <wildcard_mask> area 0
    ```
 
 2. Per-interface configuration
