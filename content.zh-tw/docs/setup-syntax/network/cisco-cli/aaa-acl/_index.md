@@ -133,7 +133,7 @@ Router(config-if)# ip access-group {<list_number> | <list_name>} {in | out}
 Router(config-line)# access-class {<list_number> | <list_name>} {in | out}
 ```
 
-### Verify ACL Setting
+### Verify ACL Configuration
 
 ```txt
 Router# show ip access-lists
