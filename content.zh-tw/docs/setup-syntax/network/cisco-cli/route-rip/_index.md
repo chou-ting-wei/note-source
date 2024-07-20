@@ -11,18 +11,18 @@ type: docs
 
 Trustworthiness of the route source: lower values indicate more preferred route sources.
 
-| Route Source        | Administrative Distance |
-| :------------------ | :---------------------- |
-| Connected           | 0                       |
-| Static              | 1                       |
-| EIGRP Summary Route | 5                       |
-| External BGP        | 20                      |
-| Internal EIGRP      | 90                      |
-| IGRP                | 100                     |
-| OSPF                | 110                     |
-| RIP                 | 120                     |
-| External EIGRP      | 170                     |
-| Internal BGP        | 200                     |
+|    Route Source     | Administrative Distance |
+| :-----------------: | :---------------------: |
+|      Connected      |            0            |
+|       Static        |            1            |
+| EIGRP Summary Route |            5            |
+|    External BGP     |           20            |
+|   Internal EIGRP    |           90            |
+|        IGRP         |           100           |
+|        OSPF         |           110           |
+|         RIP         |           120           |
+|   External EIGRP    |           170           |
+|    Internal BGP     |           200           |
 
 ### Configure a Static Route
 

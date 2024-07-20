@@ -27,12 +27,12 @@ Switch(config-if)# switchport access vlan <vlan_num>
 
 ### Available VLAN Ranges
 
-| VLANs     | Range    | Usage                                                                                                                  |
-| :-------- | :------- | :--------------------------------------------------------------------------------------------------------------------- |
-| 0, 4095   | Reserved | For system use only. You cannot see or use these VLANs.                                                                |
-| 1         | Normal   | Cisco default. You can use this VLAN but you cannot delete it. Cisco will use this VLAN to send Control Plane Traffic. |
-| 2-1001    | Normal   | For Ethernet VLANs. You can create, use, and delete these VLANs.                                                       |
-| 1002-1005 | Normal   | You cannot delete VLANs 1002-1005.                                                                                     |
+|   VLANs   |  Range   | Usage                                                                                                                  |
+| :-------: | :------: | :--------------------------------------------------------------------------------------------------------------------- |
+|  0, 4095  | Reserved | For system use only. You cannot see or use these VLANs.                                                                |
+|     1     |  Normal  | Cisco default. You can use this VLAN but you cannot delete it. Cisco will use this VLAN to send Control Plane Traffic. |
+|  2-1001   |  Normal  | For Ethernet VLANs. You can create, use, and delete these VLANs.                                                       |
+| 1002-1005 |  Normal  | You cannot delete VLANs 1002-1005.                                                                                     |
 | 1006-4094 | Extended | For Ethernet VLANs only.                                                                                               |
 
 ## Trunk Configuration

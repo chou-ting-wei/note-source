@@ -9,16 +9,16 @@ type: docs
 
 ### EtherChannel Modes Relation
 
-| Channel Mode  | on     | Active | Passive | Desirable | Auto |
-| :------------ | :----- | :----- | :------ | :-------- | :--- |
-| **on**        | Static | ?      | ?       | ?         | ?    |
-| **Active**    | ?      | LACP   | LACP    | X         | X    |
-| **Passive**   | ?      | LACP   | X       | X         | X    |
-| **Desirable** | ?      | X      | X       | PAgP      | PAgP |
-| **Auto**      | ?      | X      | X       | PAgP      | X    |
+| Channel Mode  |    on    |  Active  | Passive  | Desirable |   Auto   |
+| :-----------: | :------: | :------: | :------: | :-------: | :------: |
+|    **on**     |  Static  | &#x26A0; | &#x26A0; | &#x26A0;  | &#x26A0; |
+|  **Active**   | &#x26A0; |   LACP   |   LACP   | &#x2718;  | &#x2718; |
+|  **Passive**  | &#x26A0; |   LACP   | &#x2718; | &#x2718;  | &#x2718; |
+| **Desirable** | &#x26A0; | &#x2718; | &#x2718; |   PAgP    |   PAgP   |
+|   **Auto**    | &#x26A0; | &#x2718; | &#x2718; |   PAgP    | &#x2718; |
 
-> **X**: EtherChannel would not be set up.  
-> **?**: Dangerous (EtherChannel will be set up on ONLY ONE side).
+> &#x2718;: EtherChannel would not be set up.  
+> &#x26A0;: Dangerous (EtherChannel will be set up on ONLY ONE side).
 
 ### Setting LACP System Priority
 

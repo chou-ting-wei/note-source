@@ -7,13 +7,13 @@ type: docs
 
 ## Spanning Tree Protocol Variants
 
-| Protocol    | Standard | Resources Needed | Convergence | Tree Calculation |
-| :---------- | :------- | :--------------- | :---------- | :--------------- |
-| STP         | 802.1D   | Low              | Slow        | All VLANs        |
-| PVST+       | Cisco    | High             | Slow        | Per VLAN         |
-| RSTP        | 802.1w   | Medium           | Fast        | All VLANs        |
-| Rapid PVST+ | Cisco    | Very high        | Fast        | Per VLAN         |
-| MSTP        | 802.1s   | Medium or high   | Fast        | Per Instance     |
+|  Protocol   | Standard | Resources Needed | Convergence | Tree Calculation |
+| :---------: | :------: | :--------------: | :---------: | :--------------: |
+|     STP     |  802.1D  |       Low        |    Slow     |    All VLANs     |
+|    PVST+    |  Cisco   |       High       |    Slow     |     Per VLAN     |
+|    RSTP     |  802.1w  |      Medium      |    Fast     |    All VLANs     |
+| Rapid PVST+ |  Cisco   |    Very high     |    Fast     |     Per VLAN     |
+|    MSTP     |  802.1s  |  Medium or high  |    Fast     |   Per Instance   |
 
 ## Spanning Tree Mode Selection
 
@@ -42,13 +42,13 @@ Switch(config-if)# spanning-tree vlan <vlan_id> cost <value>
 
 ## STP Port States Overview
 
-| Status     | Receive BPDU | Send BPDU | Learn MAC | Forwarding | Duration                                   |
-| :--------- | :----------- | :-------- | :-------- | :--------- | :----------------------------------------- |
-| Disabled   | X            | X         | X         | X          | Until no shutdown                          |
-| Blocking   | O            | X         | X         | X          | Until topology changed                     |
-| Listening  | O            | O         | X         | X          | Forward Delay (default 15s)                |
-| Learning   | O            | O         | O         | X          | Forward Delay (default 15s)                |
-| Forwarding | O            | O         | O         | O          | Until shutdown or not root/designated port |
+|   Status   | Receive BPDU | Send BPDU | Learn MAC | Forwarding | Duration                                   |
+| :--------: | :----------: | :-------: | :-------: | :--------: | :----------------------------------------- |
+|  Disabled  |   &#x2718;   | &#x2718;  | &#x2718;  |  &#x2718;  | Until no shutdown                          |
+|  Blocking  |   &#x2714;   | &#x2718;  | &#x2718;  |  &#x2718;  | Until topology changed                     |
+| Listening  |   &#x2714;   | &#x2714;  | &#x2718;  |  &#x2718;  | Forward Delay (default 15s)                |
+|  Learning  |   &#x2714;   | &#x2714;  | &#x2714;  |  &#x2718;  | Forward Delay (default 15s)                |
+| Forwarding |   &#x2714;   | &#x2714;  | &#x2714;  |  &#x2714;  | Until shutdown or not root/designated port |
 
 ## STP Enhancements
 
@@ -89,7 +89,7 @@ Switch(config)# interface <interface>
 Switch(config-if)# spanning-tree guard root
 ```
 
-### Verify STP Configuration 
+### Verify STP Configuration
 
 ```txt
 Switch# show spanning-tree

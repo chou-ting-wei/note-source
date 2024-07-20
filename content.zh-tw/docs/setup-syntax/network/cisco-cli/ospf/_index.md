@@ -180,34 +180,34 @@ Router(config-router)# area 20 nssa no-summary
 
 ### Stub Area Comparison
 
-| Area Type           | External Routes (Type 4, 5 LSA) | Inter-Area Routes (Type 3 LSA) |
-| :------------------ | :------------------------------ | :----------------------------- |
-| Normal Area         | Yes                             | Yes                            |
-| Stub Area           | No                              | Yes                            |
-| Totally Stubby Area | No                              | No                             |
-| Not-So-Stubby Area  | Yes (as Type 7 LSA)             | Yes                            |
-| Totally NSSA        | Yes (as Type 7 LSA)             | No                             |
+|      Area Type      | External Routes (Type 4, 5 LSA) | Inter-Area Routes (Type 3 LSA) |
+| :-----------------: | :-----------------------------: | :----------------------------: |
+|     Normal Area     |               Yes               |              Yes               |
+|      Stub Area      |               No                |              Yes               |
+| Totally Stubby Area |               No                |               No               |
+| Not-So-Stubby Area  |       Yes (as Type 7 LSA)       |              Yes               |
+|    Totally NSSA     |       Yes (as Type 7 LSA)       |               No               |
 
-| Area Type                 | Area Restriction                                                                                           |
-| :------------------------ | :--------------------------------------------------------------------------------------------------------- |
-| Normal Area               | None                                                                                                       |
-| Stub Area                 | No Type 4 and Type 5 LSA allowed.                                                                          |
-| Totally Stubby Area       | No Type 3, 4, 5 LSA allowed, except for the default summary route.                                         |
+|         Area Type         | Area Restriction                                                                                           |
+| :-----------------------: | :--------------------------------------------------------------------------------------------------------- |
+|        Normal Area        | None                                                                                                       |
+|         Stub Area         | No Type 4 and Type 5 LSA allowed.                                                                          |
+|    Totally Stubby Area    | No Type 3, 4, 5 LSA allowed, except for the default summary route.                                         |
 | Not-So-Stubby Area (NSSA) | No Type 4 and Type 5 LSA allowed. Utilize Type 7 LSA for external routes.                                  |
-| Totally NSSA              | No Type 3, 4, 5 LSA allowed, except for the default summary route. Utilize Type 7 LSA for external routes. |
+|       Totally NSSA        | No Type 3, 4, 5 LSA allowed, except for the default summary route. Utilize Type 7 LSA for external routes. |
 
 ## LSA Types and Information
 
 LSAs provide OSPF network details like a database record.
 
-| Name                     | Sender | Receiver                           | Information                           |
-| :----------------------- | :----- | :--------------------------------- | :------------------------------------ |
-| Type 1 Router LSA        | Router | All other routers in the same area | Link / Network information            |
-| Type 2 Network LSA       | DR     | All other routers in the same area | List of routers that DR connects with |
-| Type 3 Summary LSA       | ABR    | All routers in the different area  | Network information of other areas    |
-| Type 4 Summary ASBR LSA  | ABR    | All routers in OSPF routing domain | Information of ASBR                   |
-| Type 5 AS External LSA   | ASBR   | All routers in OSPF routing domain | External network                      |
-| Type 7 NSSA External LSA | ASBR   | All the routers in the NSSA        | External network                      |
+|           Name           | Sender |              Receiver              |              Information              |
+| :----------------------: | :----: | :--------------------------------: | :-----------------------------------: |
+|    Type 1 Router LSA     | Router | All other routers in the same area |      Link / Network information       |
+|    Type 2 Network LSA    |   DR   | All other routers in the same area | List of routers that DR connects with |
+|    Type 3 Summary LSA    |  ABR   | All routers in the different area  |  Network information of other areas   |
+| Type 4 Summary ASBR LSA  |  ABR   | All routers in OSPF routing domain |          Information of ASBR          |
+|  Type 5 AS External LSA  |  ASBR  | All routers in OSPF routing domain |           External network            |
+| Type 7 NSSA External LSA |  ASBR  |    All the routers in the NSSA     |           External network            |
 
 ### Type 1 Router LSA
 
