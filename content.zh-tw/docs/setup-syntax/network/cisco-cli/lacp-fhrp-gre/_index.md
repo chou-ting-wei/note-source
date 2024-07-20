@@ -88,10 +88,10 @@ Individual interface config does not affect the port-channel interface.
 ### Verify EtherChannel Configuration
 
 ```txt
-show interfaces port-channel <identifier>
-show etherchannel summary
-show etherchannel port-channel
-show interfaces <interface> etherchannel
+Switch# show interfaces port-channel <identifier>
+Switch# show etherchannel summary
+Switch# show etherchannel port-channel
+Switch# show interfaces <interface> etherchannel
 ```
 
 ## FHRP
