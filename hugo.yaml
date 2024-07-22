@@ -9,6 +9,12 @@ hasCJKLanguage: true
 timezone: "Asia/Taipei"
 # disqusShortname: "note-13"
 
+sitemap:
+    changeFreq: weekly
+    disable: false
+    filename: sitemap.xml
+    priority: -1
+
 # Book configuration
 disablePathToLower: true
 enableGitInfo: true
