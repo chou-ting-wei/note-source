@@ -11,8 +11,8 @@ The Button component is a reusable UI element that supports different variants a
 
 ## button.tsx
 
-```ts
-// src/components/button.tsx
+```tsx
+// app/components/button.tsx
 import React from "react";
 import classNames from "classnames";
 
@@ -64,7 +64,7 @@ export default Button;
 
 ### Solid Button
 
-```ts
+```tsx
 <Button variant="solid" onClick={() => alert("Clicked!")}>
   Click Me
 </Button>
@@ -72,7 +72,7 @@ export default Button;
 
 ### Outline Button with Link
 
-```ts
+```tsx
 <Button variant="outline" href="https://example.com">
   Go to Example
 </Button>

@@ -12,13 +12,16 @@ Set up a favicon for your website that is ready for various devices and platform
 1. Use the [Favicon Generator](https://favicon.io/favicon-converter/) to create your favicon files
 2. Place the downloaded favicon files in your Hugo project's `static` directory
 
-   - `favicon.ico`
-   - `apple-touch-icon.png`
-   - `favicon-32x32.png`
-   - `favicon-16x16.png`
-   - `android-chrome-192x192.png`
-   - `android-chrome-512x512.png`
-   - `site.webmanifest`
+   ```txt
+   \static
+       android-chrome-192x192.png
+       android-chrome-512x512.png
+       apple-touch-icon.png
+       favicon-16x16.png
+       favicon-32x32.png
+       favicon.ico
+       site.webmanifest
+   ```
 
 3. Edit the `baseof.html` file located in your Hugo project's `layouts/_default` directory. Insert the following link tags within the `<head>` section to reference your favicon files
 
@@ -76,6 +79,7 @@ Enable [Google Analytics](https://analytics.google.com/) tracking on your Hugo w
 2. Edit the `baseof.html` file to include the Google Analytics script within the `<head>` section
 
    ```html
+   
    <!DOCTYPE html>
    <html lang="en">
      <head>
