@@ -123,15 +123,15 @@ Extended ACLs, which filter traffic based on source IP, source port, destination
 
 1. Apply to interface
 
-```txt
-Router(config-if)# ip access-group {<list_number> | <list_name>} {in | out}
-```
+   ```txt
+   Router(config-if)# ip access-group {<list_number> | <list_name>} {in | out}
+   ```
 
 2. Apply to line (e.g. console, vty)
 
-```txt
-Router(config-line)# access-class {<list_number> | <list_name>} {in | out}
-```
+   ```txt
+   Router(config-line)# access-class {<list_number> | <list_name>} {in | out}
+   ```
 
 ### Verify ACL Configuration
 
