@@ -26,6 +26,7 @@ Set up a favicon for your website that is ready for various devices and platform
 3. Edit the `baseof.html` file located in your Hugo project's `layouts/_default` directory. Insert the following link tags within the `<head>` section to reference your favicon files
 
    ```html
+   <!-- layouts/_default/baseof.html -->
    <!DOCTYPE html>
    <html lang="en">
      <head>
@@ -50,6 +51,7 @@ Set up a favicon for your website that is ready for various devices and platform
 4. Edit the `site.webmanifest` file in the `static` directory
 
    ```json
+   // static/site.webmanifest
    {
      "name": "My Application",
      "icons": [
@@ -79,7 +81,7 @@ Enable [Google Analytics](https://analytics.google.com/) tracking on your Hugo w
 2. Edit the `baseof.html` file to include the Google Analytics script within the `<head>` section
 
    ```html
-   
+   <!-- layouts/_default/baseof.html -->
    <!DOCTYPE html>
    <html lang="en">
      <head>

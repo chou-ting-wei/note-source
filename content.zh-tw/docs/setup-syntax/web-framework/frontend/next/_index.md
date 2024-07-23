@@ -219,7 +219,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 Add `opengraph-image.(jpg|jpeg|png|gif)` and `twitter-image.(jpg|jpeg|png|gif)` to `app` directory. Next.js will evaluate the file and automatically add the appropriate tags to your project's `<head>` element.
 
 ```tsx
-// output
+// html output
 <meta property="og:image" content="<generated>" />
 <meta property="og:image:type" content="<generated>" />
 <meta property="og:image:width" content="<generated>" />
