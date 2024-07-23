@@ -12,7 +12,7 @@ The Button component is a reusable UI element that supports different variants a
 ## button.tsx
 
 ```ts
-// src/components/Button.tsx
+// src/components/button.tsx
 import React from "react";
 import classNames from "classnames";
 
