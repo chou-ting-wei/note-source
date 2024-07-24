@@ -36,7 +36,7 @@ weight: 10
    ```txt
    ---(more ...%)--- q
    % or
-   ---(more ...%)--- Ctrl+C
+   ---(more ...%)--- <Ctrl+C>
    ```
 
 ### Navigate Between OS Modes
@@ -67,10 +67,10 @@ weight: 10
    user@hostname# exit
    ```
 
-4. To display the output of an operational mode command such as `show` while in configuration mode, issue the `run` configuration mode command
+4. Use the `run` command to run operational mode commands whlie in configuration mode
    ```txt
    [edit]
-   user@hostname# run operational-mode-command
+   user@hostname# run <operational_mode_command>
    ```
 
 ## Device Configuration
@@ -110,10 +110,27 @@ Retype new password: **********
    Retype new password: **********
    ```
 
-### Configuring a Range of Interfaces
+### Configure a Range of Interfaces
 
 ```txt
 user@hostname# wildcard range set interfaces ge-0/0/[<start>-<end>]
+```
+
+### Delete Specific Configuration
+
+```txt
+[edit]
+user@hostname# delete <configuration_command>
+```
+
+### Verify and Monitor Juniper Device
+
+```txt
+user@hostname> show configuration
+user@hostname> show system commit
+user@hostname> show interfaces
+user@hostname> show arp
+user@hostname> show version
 ```
 
 ## Network Discovery

@@ -27,8 +27,12 @@ weight: 10
    Switch(config-line)# end
    Switch#
    % or
-   Switch(config-line)# Ctrl+Z
+   Switch(config-line)# <Ctrl+Z>
    Switch#
+   ```
+4. Use the `do` command to run User EXEC mode commands whlie in EXEC mode
+   ```txt
+   Switch(config)# do show running-config
    ```
 
 ### Commands Shortening
@@ -101,10 +105,17 @@ Switch(config)# hostname <hostname>
    Switch(config)# enable secret <password>
    ```
 
-### Configuring a Range of Interfaces
+### Configure a Range of Interfaces
 
 ```txt
 Switch(config)# interface range GigabitEthernet0/<start>-<end>
+```
+
+### Delete Specific Configuration
+
+```txt
+Switch(config)# interface <interface>
+Switch(config-if)# no <configuration_command>
 ```
 
 ### Banner Message Configuration

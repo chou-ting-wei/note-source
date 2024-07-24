@@ -12,8 +12,9 @@ type: docs
 1. Set your identity
    ```sh
    git config --global user.name "your_name"
-   git config --global user.email your_email@users.noreply.github.com
+   git config --global user.email "your_email@example.com"
    ```
+   > To keep your email address private, use your GitHub-provided `no-reply` email address.
 2. Set default commit branch
    ```sh
    git config --global init.defaultBranch main
