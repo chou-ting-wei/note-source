@@ -1,5 +1,5 @@
 ---
-title: 2. VLAN Configuration
+title: VLAN Configuration
 type: docs
 ---
 

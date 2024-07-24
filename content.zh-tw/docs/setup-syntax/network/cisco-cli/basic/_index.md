@@ -1,5 +1,5 @@
 ---
-title: 1. Basic Operations
+title: Basic Operations
 type: docs
 ---
 
@@ -212,6 +212,24 @@ Switch# show version
    ```
 
 ## Device Management and Security
+
+### Shut Down Unused Ports
+
+1. Identify unused ports
+
+   ```txt
+   Switch# show interfaces status
+   ```
+
+2. Shut down unused ports
+
+   ```txt
+   Switch(config)# interface <interface>
+   Switch(config-if)# shutdown
+   % or
+   Switch(config)# interface range GigabitEthernet0/<start>-<end>
+   Switch(config-if-range)# shutdown
+   ```
 
 ### Force Other Users to Logout
 

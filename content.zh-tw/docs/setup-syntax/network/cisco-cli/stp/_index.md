@@ -1,5 +1,5 @@
 ---
-title: 3. STP Configuration
+title: STP Configuration
 type: docs
 ---
 

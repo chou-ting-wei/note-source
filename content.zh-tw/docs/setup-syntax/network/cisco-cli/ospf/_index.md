@@ -1,5 +1,5 @@
 ---
-title: 5. OSPF Configuration
+title: OSPF Configuration
 type: docs
 ---
 

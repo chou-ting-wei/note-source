@@ -1,13 +1,11 @@
 ---
-title: 6. LACP/FHRP/GRE
+title: LACP Configuration
 type: docs
 ---
 
-# LACP/FHRP/GRE
+# LACP Configuration
 
-## LACP
-
-### EtherChannel Modes Relation
+## EtherChannel Modes Relation
 
 | Channel Mode  |    on    |  Active  | Passive  | Desirable |   Auto   |
 | :-----------: | :------: | :------: | :------: | :-------: | :------: |
@@ -20,20 +18,20 @@ type: docs
 > &#x2718;: EtherChannel would not be set up.  
 > &#x26A0;: Dangerous (EtherChannel will be set up on ONLY ONE side).
 
-### Setting LACP System Priority
+## Setting LACP System Priority
 
 ```txt
 Switch(config)# lacp system-priority <priority_value>
 ```
 
-### Setting LACP Port Priority
+## Setting LACP Port Priority
 
 ```txt
 Switch(config)# int <interface>
 Switch(config-if)# lacp port-priority <priority_value>
 ```
 
-### Setting Load Balance Method
+## Setting Load Balance Method
 
 ```txt
 Switch(config)# port-channel load-balance <method>
@@ -53,7 +51,7 @@ method:
 * XOR of two values
 ```
 
-### Assign an Interface
+## Assign an Interface
 
 ```txt
 Switch(config)# int <interface>
@@ -70,7 +68,7 @@ channel_mode:
   on         Enable Etherchannel only
 ```
 
-### Config Guidelines
+## Config Guidelines
 
 Individual interface config does not affect the port-channel interface.
 
@@ -85,66 +83,11 @@ Individual interface config does not affect the port-channel interface.
   Switch(config)# spanning-tree etherchannel guard misconfig (Enabled by default)
   ```
 
-### Verify EtherChannel Configuration
+## Verify EtherChannel Configuration
 
 ```txt
 Switch# show interfaces port-channel <identifier>
 Switch# show etherchannel summary
 Switch# show etherchannel port-channel
 Switch# show interfaces <interface> etherchannel
-```
-
-## FHRP
-
-### Enable HSRP Version 2
-
-```txt
-Router(config)# int <interface>
-Router(config-if)# standby version 2
-```
-
-### Set the HSRP Virtual IP Address
-
-```txt
-Router(config-if)# standby <group_num> ip <ip_address>
-```
-
-### Configure HSRP Priority
-
-```txt
-Router(config-if)# standby <group_num> priority <priority_value>
-```
-
-### Configure HSRP Preemption
-
-```txt
-Router(config-if)# standby <group_num> preempt
-```
-
-## GRE
-
-### Define the Tunnel Interface
-
-```txt
-Router(config)# interface Tunnel<tunnel_id>
-Router(config-if)# ip address <ip_address> <subnet_mask>
-```
-
-### Set the Source and Destination
-
-```txt
-Router(config-if)# tunnel source <interface>
-Router(config-if)# tunnel destination <ip_address>
-```
-
-### Specify the Tunnel Mode
-
-```txt
-Router(config-if)# tunnel mode gre ip
-```
-
-### Verify the Tunnel Configuration
-
-```txt
-Router# show interface Tunnel<tunnel_id>
 ```
