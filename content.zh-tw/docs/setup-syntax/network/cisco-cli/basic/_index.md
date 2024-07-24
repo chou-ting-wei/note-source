@@ -1,6 +1,7 @@
 ---
 title: Basic Operations
 type: docs
+weight: 10
 ---
 
 # Basic Operations
@@ -99,6 +100,12 @@ Switch(config)# hostname <hostname>
    ```txt
    Switch(config)# enable secret <password>
    ```
+
+### Configuring a Range of Interfaces
+
+```txt
+Switch(config)# interface range GigabitEthernet0/<start>-<end>
+```
 
 ### Banner Message Configuration
 
@@ -226,9 +233,6 @@ Switch# show version
    ```txt
    Switch(config)# interface <interface>
    Switch(config-if)# shutdown
-   % or
-   Switch(config)# interface range GigabitEthernet0/<start>-<end>
-   Switch(config-if-range)# shutdown
    ```
 
 ### Force Other Users to Logout

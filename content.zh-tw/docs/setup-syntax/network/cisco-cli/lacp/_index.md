@@ -51,7 +51,7 @@ method:
 * XOR of two values
 ```
 
-## Assign an Interface
+## Assign Physical Interfaces
 
 ```txt
 Switch(config)# int <interface>

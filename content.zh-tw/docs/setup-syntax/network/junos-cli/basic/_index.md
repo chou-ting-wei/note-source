@@ -1,6 +1,7 @@
 ---
 title: Basic Operations
 type: docs
+weight: 10
 ---
 
 # Basic Operations
@@ -21,7 +22,7 @@ type: docs
 
 3. Type ? to show the top-level commands available in operational mode
    ```txt
-   root@>  ?
+   root@> ?
    ```
    ```
    Possible completions:
@@ -44,32 +45,32 @@ type: docs
    ```txt
    ---JUNOS 17.2B1.8 built 2018-05-09 23:41:29 UTC
    % cli
-   user@host>
+   user@hostname>
    ```
 2. To enter configuration mode, type the `configure` command or the `edit` command in CLI operational mode
 
    ```txt
-   user@host> configure
+   user@hostname> configure
    Entering configuration mode
 
    [edit]
-   user@host#
+   user@hostname#
    ```
 
 3. You can exit configuration mode and return to operational mode in one of the following ways
 
    ```txt
    [edit]
-   user@host# commit and-quit
+   user@hostname# commit and-quit
    % or
    [edit]
-   user@host# exit
+   user@hostname# exit
    ```
 
 4. To display the output of an operational mode command such as `show` while in configuration mode, issue the `run` configuration mode command
    ```txt
    [edit]
-   user@host# run operational-mode-command
+   user@hostname# run operational-mode-command
    ```
 
 ## Device Configuration
@@ -109,6 +110,36 @@ Retype new password: **********
    Retype new password: **********
    ```
 
+### Configuring a Range of Interfaces
+
+```txt
+user@hostname# wildcard range set interfaces ge-0/0/[<start>-<end>]
+```
+
+## Network Discovery
+
+### Link Layer Discovery Protocol
+
+1. Enable LLDP globally
+
+   ```txt
+   [edit]
+   user@hostname# set protocols lldp interface all
+   ```
+
+2. Enable LLDP for an interface
+
+   ```txt
+   [edit]
+   user@hostname# set protocols lldp interface <interface>
+   ```
+
+3. Show all LLDP neighbors
+
+   ```txt
+   user@hostname> show lldp neighbors
+   ```
+
 ## Device Management and Security
 
 ### Shut Down Unused Ports
@@ -124,11 +155,6 @@ Retype new password: **********
    ```txt
    [edit]
    user@hostname# set interfaces <interface> disable
-   % or
-   [edit]
-   user@hostname# edit interfaces ge-0/0/[<start>-<end>]
-   [edit interfaces ge-0/0/[<start>-<end>]]
-   user@hostname# set disable
    ```
 
 ### Reset the Switch

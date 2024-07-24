@@ -48,6 +48,8 @@ Switch(config-if)# switchport mode trunk
 Switch(config-if)# switchport trunk allowed vlan {<vlan_list> | except <vlan_list> | all}
 ```
 
+> `<vlan_list>` should be in the format of `<vlan_num>,<vlan_num>,<vlan_num>`.
+
 ### Modify Existing Trunk Link
 
 ```txt
