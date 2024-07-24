@@ -74,9 +74,9 @@ Individual interface config does not affect the port-channel interface.
 
 - Change EtherChannel setting after creation
   ```txt
-  Switch(config)# interface port-channel 5
+  Switch(config)# interface port-channel <channel_num>
   Switch(config-if)# switchport mode trunk
-  Switch(config-if)# switchport trunk allowed vlan 28,420
+  Switch(config-if)# switchport trunk allowed vlan <vlan_list>
   ```
 - Avoiding misconfiguration with EtherChannel
   ```txt
