@@ -20,7 +20,7 @@ Router(config-if)# ip address <ip_address> <subnet_mask>
 
 ```txt
 Router(config)# router ospf <process_id>
-Router(config-router)#
+Router(config-router)# router-id <router_id> (optional)
 ```
 
 ### Check the Router ID

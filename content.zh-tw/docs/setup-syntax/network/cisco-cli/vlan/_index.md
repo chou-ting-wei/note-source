@@ -95,6 +95,13 @@ Switch(config-if)# ip default-gateway <ip_address>
 Switch(config)# ip routing
 ```
 
+### Configure Uplink Interface
+```txt
+Switch(config)# interface <interface>
+Switch(config-if)# no switchport
+Switch(config-if)# ip address <ip_address> <subnet_mask>
+```
+
 ## Verify VLAN Configuration
 
 ```txt
