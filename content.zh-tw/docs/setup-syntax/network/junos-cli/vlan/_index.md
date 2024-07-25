@@ -45,7 +45,7 @@ user@hostname# set vlans <vlan_name> vlan-id <vlan_num>
 
 Integrated routing and bridging (IRB) provides simultaneous support for Layer 2 bridging and Layer 3 routing on the same interface.
 
-```
+```txt
 user@hostname# set interfaces irb unit <vlan_num> family inet address <ip_address>/<subnet_mask>
 user@hostname# set vlans <vlan_name> l3-interface irb.<vlan_num>
 ```
