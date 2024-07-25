@@ -12,7 +12,7 @@ Set up a favicon for your website that is ready for various devices and platform
 1. Use the [Favicon Generator](https://favicon.io/favicon-converter/) to create your favicon files
 2. Place the downloaded favicon files in your Hugo project's `static` directory
 
-   ```txt
+   ```
    \static
        android-chrome-192x192.png
        android-chrome-512x512.png

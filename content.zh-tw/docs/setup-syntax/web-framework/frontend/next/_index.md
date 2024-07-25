@@ -113,7 +113,7 @@ export default function FirstPost() {
 ## Favicon
 
 1. Use the [Favicon Generator](https://favicon.io/favicon-converter/) to create your favicon files
-   ```txt
+   ```
    android-chrome-192x192.png
    android-chrome-512x512.png
    apple-touch-icon.png
@@ -124,7 +124,7 @@ export default function FirstPost() {
    ```
 2. Rename and organize the downloaded favicon files as follows
 
-   ```txt
+   ```
    \app
        icon.ico (renamed from favicon.ico)
        apple-icon.png (renamed from apple-touch-icon.png)
