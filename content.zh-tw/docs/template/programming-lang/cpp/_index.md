@@ -15,11 +15,22 @@ type: docs
 //  Created by userwei
 //
 
+// For Windows
 #include <bits/stdc++.h>
 #include <bits/extc++.h>
 
 #pragma GCC optimize("O3,unroll-loops")
-// #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
+
+// For MacOS
+// #ifdef LOCAL
+//     #include "/Users/chou.ting.wei/Coding/stdc++.h"
+// #else
+//     #include <bits/stdc++.h>
+//     #include <bits/extc++.h>
+//     #pragma GCC optimize("O3,unroll-loops")
+
+//     using namespace __gnu_pbds;
+// #endif
 
 using namespace std;
 using namespace __gnu_pbds;

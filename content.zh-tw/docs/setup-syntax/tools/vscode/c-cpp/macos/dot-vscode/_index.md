@@ -3,13 +3,7 @@ title: .vscode
 type: docs
 ---
 
-# Under Construction
-
-## Current Status
-
-This page is actively being developed. Please check back soon for updates and additional content.
-
-<!-- # .vscode
+# .vscode
 
 This directory contains configuration files for Visual Studio Code to set up the development environment for C++ projects. These files should be placed inside the `.vscode` folder at the root of your project.
 
@@ -20,14 +14,16 @@ This directory contains configuration files for Visual Studio Code to set up the
 {
   "configurations": [
     {
-      "name": "Win32",
+      "name": "Mac",
       "includePath": ["${workspaceFolder}/**"],
-      "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
-      "windowsSdkVersion": "10.0.19041.0",
-      "compilerPath": "C:/msys64/ucrt64/bin/g++.exe",
-      "cStandard": "c17",
+      "defines": [],
+      "macFrameworkPath": [
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+      ],
+      "compilerPath": "/usr/bin/clang",
+      "cStandard": "c11",
       "cppStandard": "c++17",
-      "intelliSenseMode": "gcc-x64",
+      "intelliSenseMode": "macos-clang-x64",
       "compilerArgs": [
         "-D LOCAL",
         "-std=c++17",
@@ -47,35 +43,27 @@ This directory contains configuration files for Visual Studio Code to set up the
 ```json
 // .vscode/lanuch.json
 {
+  "version": "0.2.0",
   "configurations": [
     {
-      "name": "C/C++: g++.exe build and debug active file",
+      "name": "C/C++: clang++ build and debug active file",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${fileDirname}",
+      "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
-      "MIMode": "gdb",
-      "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        },
-        {
-          "description": "Set Disassembly Flavor to Intel",
-          "text": "-gdb-set disassembly-flavor intel",
-          "ignoreFailures": true
-        }
-      ],
-      "preLaunchTask": "C/C++: g++.exe build active file"
+      "MIMode": "lldb",
+      "logging": {
+        "trace": true,
+        "traceResponse": true,
+        "engineLogging": true
+      },
+      "preLaunchTask": "C/C++: clang++ build active file"
     }
-  ],
-  "version": "2.0.0"
+  ]
 }
 ```
 
@@ -85,11 +73,120 @@ This directory contains configuration files for Visual Studio Code to set up the
 // .vscode/settings.json
 {
   "files.associations": {
+    "*.java": "java",
     "iostream": "cpp",
-    "*.tcc": "cpp",
+    "random": "cpp",
+    "chrono": "cpp",
+    "vector": "cpp",
+    "valarray": "cpp",
+    "ostream": "cpp",
+    "__split_buffer": "cpp",
+    "__bit_reference": "cpp",
+    "__bits": "cpp",
+    "__config": "cpp",
+    "__debug": "cpp",
+    "__errc": "cpp",
+    "__hash_table": "cpp",
+    "__locale": "cpp",
+    "__mutex_base": "cpp",
+    "__node_handle": "cpp",
+    "__nullptr": "cpp",
+    "__string": "cpp",
+    "__threading_support": "cpp",
+    "__tuple": "cpp",
+    "array": "cpp",
+    "atomic": "cpp",
+    "bitset": "cpp",
+    "cctype": "cpp",
+    "clocale": "cpp",
+    "cmath": "cpp",
+    "compare": "cpp",
+    "complex": "cpp",
+    "concepts": "cpp",
+    "cstdarg": "cpp",
+    "cstddef": "cpp",
+    "cstdint": "cpp",
+    "cstdio": "cpp",
+    "cstdlib": "cpp",
+    "cstring": "cpp",
+    "ctime": "cpp",
+    "cwchar": "cpp",
+    "cwctype": "cpp",
+    "exception": "cpp",
+    "initializer_list": "cpp",
+    "ios": "cpp",
+    "iosfwd": "cpp",
+    "istream": "cpp",
+    "limits": "cpp",
+    "locale": "cpp",
+    "memory": "cpp",
+    "mutex": "cpp",
+    "new": "cpp",
+    "optional": "cpp",
+    "ratio": "cpp",
+    "sstream": "cpp",
+    "stdexcept": "cpp",
+    "streambuf": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "system_error": "cpp",
+    "tuple": "cpp",
+    "type_traits": "cpp",
+    "typeinfo": "cpp",
+    "unordered_map": "cpp",
+    "variant": "cpp",
+    "algorithm": "cpp",
+    "stack": "cpp",
+    "queue": "cpp",
+    "__tree": "cpp",
+    "any": "cpp",
+    "barrier": "cpp",
+    "cfenv": "cpp",
+    "charconv": "cpp",
+    "cinttypes": "cpp",
+    "codecvt": "cpp",
+    "condition_variable": "cpp",
+    "csetjmp": "cpp",
+    "csignal": "cpp",
+    "cuchar": "cpp",
     "deque": "cpp",
-    "vector": "cpp"
-  }
+    "coroutine": "cpp",
+    "forward_list": "cpp",
+    "fstream": "cpp",
+    "future": "cpp",
+    "iomanip": "cpp",
+    "latch": "cpp",
+    "list": "cpp",
+    "map": "cpp",
+    "numbers": "cpp",
+    "regex": "cpp",
+    "scoped_allocator": "cpp",
+    "semaphore": "cpp",
+    "set": "cpp",
+    "shared_mutex": "cpp",
+    "source_location": "cpp",
+    "span": "cpp",
+    "thread": "cpp",
+    "typeindex": "cpp",
+    "unordered_set": "cpp",
+    "bit": "cpp",
+    "*.tcc": "cpp",
+    "expected": "cpp",
+    "functional": "cpp",
+    "iterator": "cpp",
+    "memory_resource": "cpp",
+    "numeric": "cpp",
+    "utility": "cpp",
+    "format": "cpp",
+    "ranges": "cpp",
+    "spanstream": "cpp",
+    "stacktrace": "cpp",
+    "stdfloat": "cpp",
+    "stop_token": "cpp",
+    "syncstream": "cpp",
+    "__verbose_abort": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
 ```
 
@@ -98,13 +195,13 @@ This directory contains configuration files for Visual Studio Code to set up the
 ```json
 // .vscode/tasks.json
 {
+  "version": "2.0.0",
   "tasks": [
     {
-      "type": "cppbuild",
-      "label": "C/C++: g++.exe build active file",
-      "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+      "label": "C/C++: clang++ build active file",
+      "type": "shell",
+      "command": "/usr/bin/clang++",
       "args": [
-        "-fdiagnostics-color=always",
         "-g",
         "${file}",
         "-D LOCAL",
@@ -114,19 +211,15 @@ This directory contains configuration files for Visual Studio Code to set up the
         "-Wshadow",
         "-Wconversion",
         "-o",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        "${fileDirname}/${fileBasenameNoExtension}"
       ],
       "options": {
-        "cwd": "${fileDirname}"
+        "cwd": "${workspaceFolder}"
       },
       "problemMatcher": ["$gcc"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
+      "group": "build",
       "detail": "Task generated by Debugger."
     }
-  ],
-  "version": "2.0.0"
+  ]
 }
-``` -->
+```
