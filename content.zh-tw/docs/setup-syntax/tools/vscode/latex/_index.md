@@ -1,5 +1,5 @@
 ---
-title: Docker
+title: LaTeX
 type: docs
 ---
 
@@ -8,5 +8,3 @@ type: docs
 ## Current Status
 
 This page is actively being developed. Please check back soon for updates and additional content.
-
-<!-- # Docker -->
