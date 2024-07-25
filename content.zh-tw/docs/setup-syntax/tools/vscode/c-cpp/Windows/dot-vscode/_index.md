@@ -5,6 +5,8 @@ type: docs
 
 # .vscode
 
+This directory contains configuration files for Visual Studio Code to set up the development environment for C++ projects. These files should be placed inside the `.vscode` folder at the root of your project.
+
 ## c_cpp_properties.json
 
 ```json

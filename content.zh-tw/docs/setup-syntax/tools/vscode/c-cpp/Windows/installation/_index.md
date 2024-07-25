@@ -1,9 +1,10 @@
 ---
-title: MinGW
+title: Installation
 type: docs
+weight: 10
 ---
 
-# MinGW
+# Installation
 
 1. Install the `C/C++ extension for VS Code` extension in Visual Studio Code
 2. Download the latest [MSYS2 installer](https://www.msys2.org/)
