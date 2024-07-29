@@ -79,7 +79,7 @@ weight: 10
 
 ```txt
 [edit]
-root# set system host-name <new_hostname>
+root# set system host-name <hostname>
 
 ```
 
@@ -122,6 +122,38 @@ user@hostname# wildcard range set interfaces ge-0/0/[<start>-<end>]
 [edit]
 user@hostname# delete <configuration_command>
 ```
+
+### SSH Configuration
+
+1. Configure hostname and domain name
+
+```txt
+user@hostname# set system host-name <hostname>
+user@hostname# set system domain-name <domain_name>
+```
+
+2. Configure AES key pair
+
+   ```txt
+   set system services ssh ciphers aes256-ctr
+   set system services ssh ciphers aes256-cbc
+   set system services ssh ciphers aes192-ctr
+   set system services ssh ciphers aes192-cbc
+   set system services ssh ciphers aes128-ctr
+   set system services ssh ciphers aes128-cbc
+   ```
+
+3. Allow users to login by SSH
+
+   ```txt
+   user@hostname# set system services ssh protocol-version v2
+   ```
+
+4. Choose SSH version
+
+   ```txt
+   user@hostname# set system services ssh
+   ```
 
 ### Verify and Monitor Juniper Device
 

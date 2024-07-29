@@ -58,7 +58,8 @@ Extended ACLs, which filter traffic based on source IP, source port, destination
    ```txt
    Router(config)# ip access-list extended PC-1-to-2
    Router(config-ext-nacl)# permit ip host 192.168.1.2 host 192.168.2.2
-   Router(config-ext-nacl)# permit ip host 192.168.1.3 host 192.168.2.3
+   Router(config-ext-nacl)# permit tcp host 192.168.1.171 any eq 22
+   Router(config-ext-nacl)# deny tcp any any eq 22
    ```
 
 ## Configure ACL on Interface
