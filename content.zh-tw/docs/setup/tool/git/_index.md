@@ -24,6 +24,34 @@ type: docs
    git config --list
    ```
 
+### Basic Operations
+1. Clone a repository
+   ```sh
+   git clone <repository_url>
+   ```
+2. Pull changes from the remote repository
+   ```sh
+   git pull
+   ```
+3. Stage files in the current directory
+   ```sh
+   git add <file_name>
+   # or
+   git add <file_name1> <file_name2>
+   # or
+   git add . # stage all changes
+   ```
+4. Commit your changes
+   ```sh
+   git commit -m "<commit_message>"
+   ```
+5. Push changes to the remote repository
+   ```sh
+   git push --set-upstream origin <branch_name> # first push
+   # or
+   git push
+   ```
+
 ### Branch Operations
 
 1. Switch to an existing branch
