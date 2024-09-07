@@ -5,7 +5,7 @@ type: docs
 
 # Home
 
-Welcome to userwei's Notes. Here, I document important resources and foundational setups that are frequently referenced in my daily work and study. The content covers a wide range of topics, from initial setups to advanced technologies, aiming to help you resolve various challenges encountered during your technical exploration.
+Welcome to userwei's Note. Here, I document important resources and foundational setups that are frequently referenced in my daily work and study. The content covers a wide range of topics, from initial setups to advanced technologies, aiming to help you resolve various challenges encountered during your technical exploration.
 
 Whether you are a beginner just starting out or an experienced professional, you can find valuable information here. I hope this platform can serve as a reliable resource for your continuous progress in the field of technology.
 
