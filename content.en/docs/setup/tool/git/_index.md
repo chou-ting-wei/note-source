@@ -24,18 +24,6 @@ type: docs
    git config --list
    ```
 
-### Initialize a New Git Repository
-
-```sh
-echo "# <repository_name>" >> README.md
-git init
-git add README.md
-git commit -m "init(main): create repository and add README.md"
-git branch -M main
-git remote add origin <repository_url>
-git push -u origin main
-```
-
 ### Basic Operations
 
 1. Clone a repository
@@ -209,7 +197,19 @@ git push -u origin main
    git config --global commit.gpgsign true
    ```
 
-## Common Commit Message Prefixes
+### Initialize a New Git Repository
+
+```sh
+echo "# <repository_name>" >> README.md
+git init
+git add README.md
+git commit -m "init(main): create repository and add README.md"
+git branch -M main
+git remote add origin <repository_url>
+git push -u origin main
+```
+
+### Common Commit Message
 
 1. `feat(<branch_name>):` – For new features or significant additions.
 
