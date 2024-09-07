@@ -67,9 +67,25 @@ type: docs
    ```sh
    git checkout <branch_name>
    ```
-2. Create a new branch and switch to it
+2. Create a new branch from the current branch and switch to it
    ```sh
    git checkout -b <new_branch_name>
+   ```
+3. Create a new branch from a specific branch and switch to it
+   ```sh
+   git checkout -b <new_branch_name> <branch_name>
+   ```
+4. List all branches
+   ```sh
+   git branch
+   ```
+5. Rename the current branch
+   ```sh
+   git branch -m <new_branch_name>
+   ```
+6. Delete a local branch
+   ```sh
+   git branch -d <branch_name>
    ```
 
 ### Submodule Management
