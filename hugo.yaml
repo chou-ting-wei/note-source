@@ -1,10 +1,10 @@
 # hugo server --minify --themesDir ../.. --baseURL=http://0.0.0.0:1313/theme/hugo-book/
 
 baseURL: https://note.userwei.com/
-title: userwei 的筆記
+title: userwei 's Note
 theme: hugo-book
 
-DefaultContentLanguage: zh-tw
+DefaultContentLanguage: en
 hasCJKLanguage: true
 timezone: "Asia/Taipei"
 # disqusShortname: "note-13"
@@ -32,9 +32,9 @@ markup:
 # See https://gohugo.io/content-management/multilingual/#translation-by-filename
 # And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
 languages:
-  zh-tw:
-    languageName: 繁體中文
-    contentDir: content.zh-tw
+  en:
+    languageName: English
+    contentDir: content.en
     weight: 1
 
 menu:

@@ -47,58 +47,31 @@ git push -u origin main
    git pull
    ```
 3. Stage files in the current directory
+
    ```sh
-   # Stage a specific file
+   # stage a specific file
    git add <file_name>
 
-   # Stage multiple specific files
+   # stage multiple specific files
    git add <file_name1> <file_name2>
 
-   # Stage all changes in the current directory
+   # stage all changes in the current directory
    git add .
    ```
+
 4. Commit your changes
    ```sh
    git commit -m "<commit_message>"
    ```
 5. Push changes to the remote repository
+
    ```sh
-   git push -u origin <branch_name> # first push on the branch
-   # or
+   # first push on the branch, setting the upstream branch
+   git push -u origin <branch_name>
+
+   # subsequent pushes
    git push
    ```
-### **Common Commit Message Prefixes**
-
-1. **`feat(<branch_name>):`** – For new features or significant additions.
-   - Example: `feat(<branch_name>): add user authentication module`
-
-2. **`fix(<branch_name>):`** – For bug fixes or resolving issues.
-   - Example: `fix(<branch_name>): resolve login error on homepage`
-
-3. **`docs(<branch_name>):`** – For documentation changes.
-   - Example: `docs(<branch_name>): update README with setup instructions`
-
-4. **`chore(<branch_name>):`** – For routine tasks, maintenance, or minor setup changes.
-   - Example: `chore(<branch_name>): set up project structure`
-
-5. **`refactor(<branch_name>):`** – For refactoring code without changing its functionality.
-   - Example: `refactor(<branch_name>): optimize data processing logic`
-
-6. **`style(<branch_name>):`** – For formatting changes that do not affect the code’s functionality (e.g., fixing indentation).
-   - Example: `style(<branch_name>): apply consistent code formatting`
-
-7. **`test(<branch_name>):`** – For adding or updating tests.
-   - Example: `test(<branch_name>): add unit tests for authentication service`
-
-8. **`perf(<branch_name>):`** – For performance improvements.
-   - Example: `perf(<branch_name>): enhance database query efficiency`
-
-9. **`build(<branch_name>):`** – For changes that affect the build system or dependencies.
-   - Example: `build(<branch_name>): update webpack configuration`
-
-10. **`ci(<branch_name>):`** – For CI/CD pipeline changes.
-    - Example: `ci(<branch_name>): update GitHub Actions workflow`
-
 
 ### Branch Operations
 
@@ -235,3 +208,44 @@ git push -u origin main
    ```sh
    git config --global commit.gpgsign true
    ```
+
+## Common Commit Message Prefixes
+
+1. `feat(<branch_name>):` – For new features or significant additions.
+
+   - Example: `feat(<branch_name>): add user authentication module`
+
+2. `fix(<branch_name>):` – For bug fixes or resolving issues.
+
+   - Example: `fix(<branch_name>): resolve login error on homepage`
+
+3. `docs(<branch_name>):` – For documentation changes.
+
+   - Example: `docs(<branch_name>): update README with setup instructions`
+
+4. `chore(<branch_name>):` – For routine tasks, maintenance, or minor setup changes.
+
+   - Example: `chore(<branch_name>): set up project structure`
+
+5. `refactor(<branch_name>):` – For refactoring code without changing its functionality.
+
+   - Example: `refactor(<branch_name>): optimize data processing logic`
+
+6. `style(<branch_name>):` – For formatting changes that do not affect the code’s functionality (e.g., fixing indentation).
+
+   - Example: `style(<branch_name>): apply consistent code formatting`
+
+7. `test(<branch_name>):` – For adding or updating tests.
+
+   - Example: `test(<branch_name>): add unit tests for authentication service`
+
+8. `perf(<branch_name>):` – For performance improvements.
+
+   - Example: `perf(<branch_name>): enhance database query efficiency`
+
+9. `build(<branch_name>):` – For changes that affect the build system or dependencies.
+
+   - Example: `build(<branch_name>): update webpack configuration`
+
+10. `ci(<branch_name>):` – For CI/CD pipeline changes.
+    - Example: `ci(<branch_name>): update GitHub Actions workflow`
