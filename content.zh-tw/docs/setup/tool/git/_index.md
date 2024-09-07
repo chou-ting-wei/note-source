@@ -24,7 +24,20 @@ type: docs
    git config --list
    ```
 
+## Create a new repository on the command line
+
+```sh
+echo "# <repository_name>" >> README.md
+git init
+git add README.md
+git commit -m "init(main): first commit"
+git branch -M main
+git remote add origin <repository_url>
+git push -u origin main
+```
+
 ### Basic Operations
+
 1. Clone a repository
    ```sh
    git clone <repository_url>
@@ -47,8 +60,6 @@ type: docs
    ```
 5. Push changes to the remote repository
    ```sh
-   git push --set-upstream origin <branch_name> # first push
-   # or
    git push
    ```
 
