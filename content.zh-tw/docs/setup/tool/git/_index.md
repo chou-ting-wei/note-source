@@ -24,13 +24,13 @@ type: docs
    git config --list
    ```
 
-## Create a new repository on the command line
+### Initialize a New Git Repository
 
 ```sh
 echo "# <repository_name>" >> README.md
 git init
 git add README.md
-git commit -m "init(main): first commit"
+git commit -m "init(main): create repository and add README.md"
 git branch -M main
 git remote add origin <repository_url>
 git push -u origin main
@@ -48,11 +48,14 @@ git push -u origin main
    ```
 3. Stage files in the current directory
    ```sh
+   # Stage a specific file
    git add <file_name>
-   # or
+
+   # Stage multiple specific files
    git add <file_name1> <file_name2>
-   # or
-   git add . # stage all changes
+
+   # Stage all changes in the current directory
+   git add .
    ```
 4. Commit your changes
    ```sh
