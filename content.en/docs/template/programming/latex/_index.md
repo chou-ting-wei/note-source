@@ -35,6 +35,11 @@ type: docs
 \setenumerate[3]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
 \setenumerate[4]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
 
+\setlist[itemize,1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+\setlist[itemize,2]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+\setlist[itemize,3]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+\setlist[itemize,4]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+
 \usepackage{color}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
