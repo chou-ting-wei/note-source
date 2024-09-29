@@ -8,6 +8,7 @@ type: docs
 ## config.fish
 
 ```sh
+# ~/.config/fish/config.fish
 if status is-interactive
     # Commands to run in interactive sessions can go here
     # Example: Aliases or functions can be placed here
