@@ -22,3 +22,22 @@ type: docs
    ```sh
    fish --version
    ```
+
+## Changing Fish Shell Configuration
+
+1. Open the Fish configuration file
+
+   ```sh
+   vim ~/.config/fish/config.fish
+   ```
+
+2. Add or modify configurations
+
+   ```sh
+   set -U fish_greeting
+   ```
+
+3. Apply the changes
+   ```sh
+   source ~/.config/fish/config.fish
+   ```
