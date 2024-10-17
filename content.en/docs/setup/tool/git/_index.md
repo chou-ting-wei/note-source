@@ -163,9 +163,11 @@ type: docs
 ### SSH Key Setup
 
 1. Generate a new SSH key
+
    ```sh
    ssh-keygen -t ed25519 -C "your_email@example.com"
    ```
+
    > To keep your email address private, use your GitHub-provided `no-reply` email address.
 
 2. Copy the SSH public key to your clipboard
@@ -229,6 +231,25 @@ git branch -M main
 git remote add origin <repository_url>
 git push -u origin main
 ```
+
+### Git Large File Storage (LFS)
+
+1. Install Git LFS
+   ```sh
+   git lfs install
+   ```
+2. Use Git LFS to track specific file types. For example, to track all `.psd` files
+
+   ```sh
+   git lfs track "*.psd"
+   ```
+
+3. After you add files to be tracked by LFS, ensure you add them to the repository by staging the `.gitattributes` file
+   ```sh
+   git add .gitattributes
+   git commit -m "chore(main): add Git LFS tracking for large files"
+   ```
+4. Git LFS automatically handles large files as you push them to the repository
 
 ### Common Commit Message
 
