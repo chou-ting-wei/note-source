@@ -158,6 +158,48 @@ type: docs
    git rebase --continue
    ```
 
+### Git Stash for Branch Switching
+
+1. Save your current changes
+
+   ```sh
+   git stash
+   ```
+
+2. View the stashed changes
+   ```sh
+   git stash list
+   ```
+3. Switch to the target branch
+
+   ```sh
+   git checkout <target_branch>
+   ```
+
+4. Apply and remove the latest stash
+   ```sh
+   git stash pop
+   ```
+
+### Git Large File Storage
+
+1. Install Git LFS
+   ```sh
+   git lfs install
+   ```
+2. Use Git LFS to track specific file types. For example, to track all `.psd` files
+
+   ```sh
+   git lfs track "*.psd"
+   ```
+
+3. After you add files to be tracked by LFS, ensure you add them to the repository by staging the `.gitattributes` file
+   ```sh
+   git add .gitattributes
+   git commit -m "chore(main): add Git LFS tracking for large files"
+   ```
+4. Git LFS automatically handles large files as you push them to the repository
+
 ## GitHub
 
 ### SSH Key Setup
@@ -231,25 +273,6 @@ git branch -M main
 git remote add origin <repository_url>
 git push -u origin main
 ```
-
-### Git Large File Storage (LFS)
-
-1. Install Git LFS
-   ```sh
-   git lfs install
-   ```
-2. Use Git LFS to track specific file types. For example, to track all `.psd` files
-
-   ```sh
-   git lfs track "*.psd"
-   ```
-
-3. After you add files to be tracked by LFS, ensure you add them to the repository by staging the `.gitattributes` file
-   ```sh
-   git add .gitattributes
-   git commit -m "chore(main): add Git LFS tracking for large files"
-   ```
-4. Git LFS automatically handles large files as you push them to the repository
 
 ### Common Commit Message
 
