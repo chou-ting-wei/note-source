@@ -123,6 +123,146 @@ type: docs
    ```
    > This can overwrite changes in the remote repository.
 
+### Undo and Reset Git Commits
+
+> &#x26a0;&#xfe0f;**Warning:** Undoing commits can rewrite history and affect collaborators. Ensure you understand the implications before proceeding.
+
+#### Undo the Last Commit
+
+1. Keep changes in working directory
+
+   ```sh
+   git reset --soft HEAD~1
+   ```
+
+2. Unstage changes
+
+   ```sh
+   git reset HEAD~1
+   ```
+
+3. Discard the commit completely
+   ```sh
+   git reset --hard HEAD~1
+   ```
+   > &#x26a0;&#xfe0f;**Warning:** `--hard` permanently deletes changes.
+
+#### Undo a Specific Commit
+
+```sh
+git rebase -i <commit_before_target>
+```
+
+#### Revert a Commit
+
+```sh
+git revert <commit_hash>
+```
+
+#### Amend the Last Commit
+
+- Change commit message
+
+  ```sh
+  git commit --amend -m "New commit message"
+  ```
+
+  > &#x26a0;&#xfe0f;**Warning:** Requires force pushing if the commit has been pushed remotely.
+
+- Include additional changes
+
+  1.  Stage the changes
+
+      ```sh
+      git add <file_name>
+      ```
+
+  2.  Amend the commit
+
+      ```sh
+      git commit --amend
+      ```
+
+      > &#x26a0;&#xfe0f;**Warning:** Requires force pushing if the commit has been pushed remotely.
+
+#### Reset to a Previous State
+
+1. Soft reset: keeps changes staged.
+
+   ```sh
+   git reset --soft <commit_hash>
+   ```
+
+2. Mixed reset: unstages changes, keeps them in working directory.
+
+   ```sh
+   git reset --mixed <commit_hash>
+   ```
+
+3. Hard reset: discards all changes.
+   ```sh
+   git reset --hard <commit_hash>
+   ```
+   > &#x26a0;&#xfe0f;**Warning:** `--hard` permanently deletes changes.
+
+### Rebasing Specific Commits
+
+> &#x26a0;&#xfe0f;**Warning:** Rebasing rewrites commit history. Avoid rebasing public branches shared with others to prevent conflicts and potential data loss.
+
+1. Create a backup branch to prevent accidental data loss
+   ```sh
+   git branch backup-branch
+   ```
+2. Identify the range of commits to rebase
+   ```sh
+   git log --oneline
+   ```
+   ```
+   a1b2c3d (HEAD -> feature) feat: add new feature
+   e4f5g6h fix: resolve bug
+   i7j8k9l docs: update README
+   m1n2o3p chore: update dependencies
+   q4r5s6t refactor: improve code structure
+   ```
+3. Start an interactive rebase
+
+   ```sh
+   git rebase -i HEAD~5
+   ```
+
+   ```
+   pick q4r5s6t refactor(main): improve code structure
+   pick m1n2o3p chore(main): update dependencies
+   pick i7j8k9l docs(main): update README
+   pick e4f5g6h fix(main): resolve bug
+   pick a1b2c3d feat(main): add new feature
+
+   # Rebase 123abc4..a1b2c3d onto 123abc4 (5 commands)
+   #
+   # Commands:
+   # p, pick <commit> = use commit
+   # r, reword <commit> = use commit, but edit the commit message
+   # e, edit <commit> = use commit, but stop for amending
+   # s, squash <commit> = use commit, but meld into previous commit
+   # f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
+   #                    commit's log message, unless -C is used, in which case
+   #                    keep only this commit's message; -c is same as -C but
+   #                    opens the editor
+   # x, exec <command> = run command (the rest of the line) using shell
+   # b, break = stop here (continue rebase later with 'git rebase --continue')
+   # d, drop <commit> = remove commit
+   # l, label <label> = label current HEAD with a name
+   # t, reset <label> = reset HEAD to a label
+   # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+   #         create a merge commit using the original merge commit's
+   #
+   ```
+
+4. Save and close the editor
+   After making the desired changes, save the file and close the editor. Git will proceed with the rebase based on your instructions.
+5. Complete the rebase
+   After handling all actions, Git will complete the rebase process. If there are conflicts, Git will pause and prompt you to resolve them.
+
 ### Conflict Resolution
 
 1. Identify the conflict
