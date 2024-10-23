@@ -102,22 +102,64 @@ type: docs
    git submodule update --init --recursive
    ```
 
+### Bisecting Commits
+
+1.  Start the bisect process
+
+    ```sh
+    git bisect start
+    ```
+
+2.  Mark the current commit as bad (contains the bug)
+
+    ```sh
+    git bisect bad
+    ```
+
+3.  Mark an older commit where the bug did not exist as good
+
+    ```sh
+    git bisect good <commit_hash>
+    ```
+
+4.  Git will automatically checkout the next commit in the middle of the good and bad commits
+
+    - If the bug is present, mark the commit as bad
+
+      ```sh
+      git bisect bad
+      ```
+
+    - If the bug is not present, mark the commit as good
+
+      ```sh
+      git bisect good
+      ```
+
+5.  Continue marking commits until Git identifies the first bad commit
+
+6.  Once the problematic commit is found, end the bisect session
+
+    ```sh
+    git bisect reset
+    ```
+
 ### Commit Reversion
 
 > &#x26a0;&#xfe0f;**Warning:** Reverting commits can potentially lead to loss of work. Ensure you have backups or have communicated with your team before performing these actions.
 
-1. Identify the Commit
+1. Identify the commit
    ```sh
    git log
    ```
-2. Reset to the Previous Commit
+2. Reset to the previous commit
    ```sh
    git reset --hard HEAD~1
    # or
    git reset --hard <commit_hash>
    ```
    > This will discard all changes after the specified commit.
-3. Force Push the Changes
+3. Force push the changes
    ```sh
    git push --force
    ```
@@ -187,19 +229,19 @@ git revert <commit_hash>
 
 #### Reset to a Previous State
 
-1. Soft reset: keeps changes staged.
+1. Soft reset: keeps changes staged
 
    ```sh
    git reset --soft <commit_hash>
    ```
 
-2. Mixed reset: unstages changes, keeps them in working directory.
+2. Mixed reset: unstages changes, keeps them in working directory
 
    ```sh
    git reset --mixed <commit_hash>
    ```
 
-3. Hard reset: discards all changes.
+3. Hard reset: discards all changes
    ```sh
    git reset --hard <commit_hash>
    ```
@@ -258,9 +300,9 @@ git revert <commit_hash>
    #
    ```
 
-4. Save and close the editor
+4. Save and close the editor  
    After making the desired changes, save the file and close the editor. Git will proceed with the rebase based on your instructions.
-5. Complete the rebase
+5. Complete the rebase  
    After handling all actions, Git will complete the rebase process. If there are conflicts, Git will pause and prompt you to resolve them.
 
 ### Conflict Resolution
