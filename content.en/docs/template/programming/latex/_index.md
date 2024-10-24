@@ -26,19 +26,19 @@ type: docs
 \usepackage{fancyhdr}
 \usepackage{graphicx, float, subfigure, picinpar, adjustbox}
 \usepackage{amsmath, amssymb, mathtools, tabularx}
+\usepackage{hyperref, forest, multicol}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
-\setlength\parindent{0pt}
 \usepackage{enumitem}
+\setlength\parindent{0pt}
 \setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
 \setenumerate[2]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
 \setenumerate[3]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
 \setenumerate[4]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
-
-\setlist[itemize,1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
-\setlist[itemize,2]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
-\setlist[itemize,3]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
-\setlist[itemize,4]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+\setitemize[1]{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=0pt}
+\setitemize[2]{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=0pt}
+\setitemize[3]{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=0pt}
+\setitemize[4]{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=0pt}
 
 \usepackage{color}
 \definecolor{codegreen}{rgb}{0,0.6,0}
