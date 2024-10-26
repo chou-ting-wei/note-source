@@ -11,12 +11,8 @@ type: docs
 # ~/.config/fish/config.fish
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    # Example: Aliases or functions can be placed here
+    set -gx PATH /opt/homebrew/bin $PATH
 end
 
-# Set the universal PATH and make sure /usr/local/bin comes first
-set -U PATH /usr/local/bin $PATH
-
-# Disable Fish Shell greeting message
-set -U fish_greeting ""
+set -g fish_greeting ""
 ```

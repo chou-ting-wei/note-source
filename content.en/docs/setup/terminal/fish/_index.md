@@ -18,7 +18,21 @@ type: docs
    chsh -s /usr/bin/fish
    ```
 
-3. Verify Installation
+3. Verify installation
    ```sh
    fish --version
+   ```
+
+## Oh-My-Fish
+
+1. Install Oh-My-Fish
+
+   ```sh
+   curl -L https://get.oh-my.fish | fish
+   ```
+
+2. Install the `agnoster` theme
+   ```sh
+   omf install agnoster
+   omf theme agnoster
    ```
