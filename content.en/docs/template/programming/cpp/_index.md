@@ -16,24 +16,24 @@ type: docs
 //
 
 // For Windows
-#include <bits/stdc++.h>
-#include <bits/extc++.h>
+// #include <bits/stdc++.h>
+// #include <bits/extc++.h>
+// #pragma GCC optimize("O3,unroll-loops")
 
-#pragma GCC optimize("O3,unroll-loops")
+// using namespace __gnu_pbds;
 
 // For MacOS
-// #ifdef LOCAL
-//     #include "/Users/chou.ting.wei/Coding/stdc++.h"
-// #else
-//     #include <bits/stdc++.h>
-//     #include <bits/extc++.h>
-//     #pragma GCC optimize("O3,unroll-loops")
+#ifdef LOCAL
+    #include "/Users/twchou/Coding/stdc++.h"
+#else
+    #include <bits/stdc++.h>
+    #include <bits/extc++.h>
+    #pragma GCC optimize("O3,unroll-loops")
 
-//     using namespace __gnu_pbds;
-// #endif
+    using namespace __gnu_pbds;
+#endif
 
 using namespace std;
-using namespace __gnu_pbds;
 
 #define int long long
 #define ull unsigned long long
