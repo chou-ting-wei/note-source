@@ -24,7 +24,7 @@ type: docs
 
 // For MacOS
 #ifdef LOCAL
-    #include "/Users/twchou/Coding/stdc++.h"
+    #include "/Users/<username>/Coding/stdc++.h"
 #else
     #include <bits/stdc++.h>
     #include <bits/extc++.h>

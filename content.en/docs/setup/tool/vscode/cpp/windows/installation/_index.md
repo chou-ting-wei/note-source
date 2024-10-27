@@ -21,3 +21,5 @@ weight: 10
    g++ --version
    gdb --version
    ```
+6. Configure VS Code for C++ development  
+   > Add the [configuration files](https://note.userwei.com/docs/setup/tool/vscode/cpp/windows/config/) to the .vscode folder at your project's root.
