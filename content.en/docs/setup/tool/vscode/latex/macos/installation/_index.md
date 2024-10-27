@@ -22,26 +22,50 @@ type: docs
      set -U fish_user_paths /Library/TeX/texbin $fish_user_paths
      ```
 
-3. Install additional LaTeX packages
+3. Verify the installation
+   ```sh
+   xelatex --version
+   ```
+4. Install additional LaTeX packages
 
    - Update `tlmgr`
      ```sh
-     sudo tlmgr update --self
+     sudo tlmgr update --self --all
      ```
    - Install common packages
      ```sh
+     sudo tlmgr install collection-latex
      sudo tlmgr install collection-latexrecommended
      ```
-   - Install specific packages
-
+   - Search for missing `.sty` files
      ```sh
-     sudo tlmgr install fontspec
-     sudo tlmgr install xetex
+     tlmgr search --global --file "<missing_file>.sty"
      ```
 
-4. Verify the installation
+5. Install the necessary packages and test the [template](https://note.userwei.com/docs/template/programming/latex/) to ensure LaTeX is working correctly
+
    ```sh
-   xelatex --version
+   sudo tlmgr install fontspec
+   sudo tlmgr install xecjk
+   sudo tlmgr install xunicode-addon
+   sudo tlmgr install greek-fontenc
+   sudo tlmgr install geometry
+   sudo tlmgr install fancyhdr
+   sudo tlmgr install graphicx
+   sudo tlmgr install float
+   sudo tlmgr install subfigure
+   sudo tlmgr install picinpar
+   sudo tlmgr install adjustbox
+   sudo tlmgr install amsmath
+   sudo tlmgr install amssymb
+   sudo tlmgr install mathtools
+   sudo tlmgr install tabularx
+   sudo tlmgr install hyperref
+   sudo tlmgr install forest
+   sudo tlmgr install multicol
+   sudo tlmgr install enumitem
+   sudo tlmgr install xcolor
+   sudo tlmgr install listings
    ```
 
 ## Configure LaTeX Workshop
