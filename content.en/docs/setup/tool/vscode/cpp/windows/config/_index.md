@@ -25,7 +25,7 @@ This directory contains configuration files for Visual Studio Code to set up the
       "cppStandard": "c++17",
       "intelliSenseMode": "gcc-x64",
       "compilerArgs": [
-        "-D LOCAL",
+        "-DLOCAL",
         "-std=c++17",
         "-Wall",
         "-Wextra",
@@ -45,7 +45,7 @@ This directory contains configuration files for Visual Studio Code to set up the
 {
   "configurations": [
     {
-      "name": "C/C++: g++.exe build and debug active file",
+      "name": "C/C++: g++ build and debug active file",
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
@@ -68,24 +68,10 @@ This directory contains configuration files for Visual Studio Code to set up the
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "C/C++: g++.exe build active file"
+      "preLaunchTask": "C/C++: g++ build active file"
     }
   ],
   "version": "2.0.0"
-}
-```
-
-### settings.json
-
-```json
-// .vscode/settings.json
-{
-  "files.associations": {
-    "iostream": "cpp",
-    "*.tcc": "cpp",
-    "deque": "cpp",
-    "vector": "cpp"
-  }
 }
 ```
 
@@ -97,13 +83,13 @@ This directory contains configuration files for Visual Studio Code to set up the
   "tasks": [
     {
       "type": "cppbuild",
-      "label": "C/C++: g++.exe build active file",
+      "label": "C/C++: g++ build active file",
       "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
       "args": [
         "-fdiagnostics-color=always",
         "-g",
         "${file}",
-        "-D LOCAL",
+        "-DLOCAL",
         "-std=c++17",
         "-Wall",
         "-Wextra",
