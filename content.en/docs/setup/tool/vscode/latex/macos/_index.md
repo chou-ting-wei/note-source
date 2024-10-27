@@ -1,5 +1,5 @@
 ---
 bookCollapseSection: true
-title: Latex
+title: MacOS
 type: docs
 ---
