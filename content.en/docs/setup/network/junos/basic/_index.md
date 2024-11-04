@@ -206,6 +206,102 @@ user@hostname> show version
    user@hostname# set interfaces <interface> disable
    ```
 
+### Upgrade the Switch
+
+1. Download the latest Junos OS image from [Support - Juniper Networks](https://support.juniper.net/support/)
+2. List the disks connected to your system
+
+   ```sh
+   diskutil list
+   ```
+
+   ```
+   /dev/disk0 (internal, physical):
+      #:                       TYPE NAME                    SIZE       IDENTIFIER
+      0:      GUID_partition_scheme                        *500.3 GB   disk0
+      1:             Apple_APFS_ISC Container disk1         524.3 MB   disk0s1
+      2:                 Apple_APFS Container disk3         494.4 GB   disk0s2
+      3:        Apple_APFS_Recovery Container disk2         5.4 GB     disk0s3
+
+   /dev/disk3 (synthesized):
+      #:                       TYPE NAME                    SIZE       IDENTIFIER
+      0:      APFS Container Scheme -                      +494.4 GB   disk3
+                                    Physical Store disk0s2
+      1:                APFS Volume Macintosh HD            10.7 GB    disk3s1
+      2:              APFS Snapshot com.apple.os.update-... 10.7 GB    disk3s1s1
+      3:                APFS Volume Preboot                 6.6 GB     disk3s2
+      4:                APFS Volume Recovery                966.2 MB   disk3s3
+      5:                APFS Volume Data                    141.3 GB   disk3s5
+      6:                APFS Volume VM                      1.1 GB     disk3s6
+
+   /dev/disk4 (external, physical):
+      #:                       TYPE NAME                    SIZE       IDENTIFIER
+      0:     FDisk_partition_scheme                        *8.1 GB     disk4
+      1:               Windows_NTFS Untitled                8.1 GB     disk4s1
+   ```
+
+3. Unmount the USB drive
+
+   ```sh
+   diskutil unmountDisk /dev/disk4
+   ```
+
+4. Write the Junos image to the USB drive
+
+   ```sh
+   sudo dd if=junos-install-media-usb-ex-arm-32-21.4R3-S9.5.img of=/dev/rdisk4 bs=1m
+   ```
+
+   > Make sure to replace `junos-install-media-usb-ex-arm-32-21.4R3-S9.5.img` with the correct file path for your Junos image. Use `/dev/rdisk4` instead of `/dev/disk4` for faster write speeds on macOS.
+
+5. Display the current configuration
+
+   ```sh
+   cscc@twchou_J2300> show configuration | display set
+   ```
+
+6. Boot and install from USB
+
+   ```
+   Boot Menu
+
+   1. Boot [P]revious installed Junos packages
+   2. Boot Junos in [S]ingle user mode
+   3. Boot from [R]ecovery snapshot
+   4. Boot from [U]SB
+   5. Boot to [O]AM shell
+   6. Snapshot [B]oot menu
+   7. [M]ain menu
+   ```
+
+7. Verify the installed version
+
+   ```sh
+   --- JUNOS 21.4R3-S9.5 Kernel 32-bit  JNPR-12.1-20240304.935bb4f_buil
+   root@:RE:0% cli
+   {master:0}
+   root> show version
+   ```
+
+8. Configure additional settings
+
+   ```sh
+   {master:0}
+   root> configure
+   Entering configuration mode
+
+   {master:0}[edit]
+   root# delete chassis auto-image-upgrade
+
+   {master:0}[edit]
+   root# set system root-authentication plain-text-password
+   New password:
+   Retype new password:
+
+   {master:0}[edit]
+   root# commit
+   ```
+
 ### Reset the Switch
 
 Revert a Juniper EX2300 switch to its factory-default configuration using the Factory Reset/Mode button.

@@ -19,7 +19,7 @@ type: docs
 \usepackage{fontspec, xeCJK, xunicode-addon}
     \xeCJKsetup{AutoFakeBold=true, AutoFakeSlant=true}
     \setCJKmainfont{KaiTi} % For Windows
-    % \setCJKmainfont{Kaiti TC} % For MacOS
+    % \setCJKmainfont{Kaiti TC} % For macOS
     \setmainfont{Times New Roman}
 \usepackage[left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
 \linespread{1.2}

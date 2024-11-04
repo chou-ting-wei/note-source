@@ -23,6 +23,11 @@ type: docs
    fish --version
    ```
 
+4. Launch fish configuration interface
+   ```sh
+   fish_config
+   ```
+
 ## Oh-My-Fish
 
 1. Install Oh-My-Fish

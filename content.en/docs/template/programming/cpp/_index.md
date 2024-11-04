@@ -22,7 +22,7 @@ type: docs
 
 // using namespace __gnu_pbds;
 
-// For MacOS
+// For macOS
 #ifdef LOCAL
     #include "/Users/<username>/Coding/stdc++.h"
 #else
