@@ -39,7 +39,7 @@ using namespace std;
 #define ull unsigned long long
 
 #define For(z, x, y) for(int z = x; z <= y; z ++)
-#define Ffor(z, x, y) for(int z = x; z >= y; z --)
+#define Forr(z, x, y) for(int z = x; z >= y; z --)
 #define lowbit(x) ((x) & -(x))
 
 #define ef emplace_front
